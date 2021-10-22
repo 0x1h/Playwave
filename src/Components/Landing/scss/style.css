@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #1B1B1B;
+  min-height: 100vh;
+  position: relative;
+}
+
+nav {
+  padding-right: 20px;
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+nav .nav-stuff {
+  max-width: 900px;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .nav-stuff .main-components {
+  height: 100%;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .nav-stuff .main-components .logo-box {
+  width: 70px;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .nav-stuff .main-components .logo-box img {
+  width: 100%;
+  position: absolute;
+}
+
+nav .nav-stuff .direct-links {
+  min-width: 40px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .nav-stuff .direct-links a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav .nav-stuff .direct-links a:hover {
+  color: #0BFF9F;
+}
+
+.getStarted {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.getStarted .Slogan {
+  width: 50%;
+  min-height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.getStarted .Slogan h1 {
+  color: #ffffff;
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+  font-size: 8rem;
+}
+
+.getStarted .Authorize {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.getStarted .Authorize .authorize-button {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #0BFF9F;
+  width: 280px;
+  height: 100px;
+  border-radius: 70px;
+  margin-right: 20px;
+  color: #000;
+  position: relative;
+  cursor: pointer;
+  border: 3px solid black;
+  font-size: 1.2em;
+  font-weight: 900;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.getStarted .Authorize .authorize-button:hover {
+  border-color: #0BFF9F;
+  border-width: 5px;
+}
+
+.getStarted .Authorize .authorize-button .spotify-logo {
+  width: 70px;
+  height: 100%;
+  border: 1px solid blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.getStarted .Authorize .authorize-button .spotify-logo img {
+  width: 100%;
+}
+
+.Waves {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 1180px;
+}
+
+::-moz-selection {
+  background: #0BFF9F;
+  color: #000;
+}
+
+::selection {
+  background: #0BFF9F;
+  color: #000;
+}
+/*# sourceMappingURL=style.css.map */
