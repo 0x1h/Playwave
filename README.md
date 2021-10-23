@@ -2,7 +2,7 @@
 
 ## Disclaimer
 
-This is personal project and it doesnt monetizes me, everything what is shown there is for imporving skills in React Typescript 
+This is personal project and it doesn't monetize me, everything what is shown there is for imporving skills in React Typescript 
 
 ## About
 
