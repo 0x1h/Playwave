@@ -114,3 +114,45 @@ $main-color: #0bff9f;
     }
   }
 }
+.imgSource-box {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 6;
+  @include Center;
+  .src-container {
+    width: 500px;
+    height: 200px;
+    background: #383838;
+    position: relative;
+    z-index: 8;
+    border-radius: 20px;
+    margin: 500px 0;
+    transform: translateY(-50px);
+    box-shadow: 5px 5px 51px #000;
+    .close-btn {
+      width: 100%;
+      height: 20px;
+    }
+    .input-box {
+      @include Center;
+      width: 100%;
+      height: 120px;
+      padding: 0 20px;
+      input {
+        width: 100%;
+        height: 40px;
+        background: $bg-color;
+        border: 3px solid $main-color;
+        border-radius: 6px;
+        outline: none;
+        color: #ffffff;
+      }
+    }
+  }
+}
+.emptyImage{
+  @include Center;
+  flex-direction: column;
+}
