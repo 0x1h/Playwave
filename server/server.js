@@ -17,9 +17,14 @@ app.post("/login", (req, res) => {
     })
 
     SpotifyWeb.clientCredentialsGrant().then(data => {
-        console.log(data)
-    }).catch(err => console.log(err))
+        SpotifyWeb.setAccessToken(data.body["access_token"])
+        console.log(data.body)
 
+        res.json({
+            tokenExpires: data.body["token_expires"],
+            accessToken: data.body["access_token"],
+        })
+    }).catch(err => console.log(err))
 
 })
 

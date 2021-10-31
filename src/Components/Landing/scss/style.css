@@ -151,7 +151,7 @@ nav .nav-stuff .direct-links a:hover {
   position: relative;
   cursor: pointer;
   border: 3px solid black;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 900;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -187,6 +187,11 @@ nav .nav-stuff .direct-links a:hover {
   right: 0;
   top: 0;
   min-width: 1180px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 ::-moz-selection {

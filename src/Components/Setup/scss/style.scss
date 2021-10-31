@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+@import "../../Landing/scss/variables.scss";
+
+$bg-color: #1b1b1b;
+$main-color: #0bff9f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  .slogan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    h1 {
+      font-weight: 600;
+      color: #fff;
+      font-size: 7rem;
+      font-style: italic;
+    }
+  }
+  .form-container {
+    width: 100%;
+    position: relative;
+    padding: 20px 160px;
+    .form-box {
+      width: 100%;
+      background: #383838;
+      height: 100%;
+      border-radius: 30px;
+      position: inherit;
+      padding-top: 50px;
+      .base-inputs {
+        width: 100%;
+        height: 230px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .img-circle {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: $bg-color;
+          cursor: pointer;
+          display: inherit;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        .user-inputs {
+          width: 250px;
+          height: 200px;
+          @include Center;
+          flex-direction: column;
+          input {
+            color: #fff;
+            width: 100%;
+            height: 40px;
+            background: $bg-color;
+            border: 3px solid $main-color;
+            margin: 20px 0;
+            border-radius: 6px;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .secondary-inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    input {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      background: $bg-color;
+      border: 3px solid $main-color;
+      border-radius: 6px;
+      outline: none;
+      color: #ffffff;
+    }
+    textarea {
+      background: $bg-color;
+      border: 3px solid $main-color;
+      border-radius: 6px;
+      outline: none;
+      color: #fff;
+    }
+  }
+  .button-box {
+    width: 100%;
+    height: 100px;
+    @include Center;
+    button {
+      width: 200px;
+      height: 50px;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: $main-color;
+      font-weight: 600;
+    }
+  }
+}

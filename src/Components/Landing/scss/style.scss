@@ -91,7 +91,7 @@ nav {
           position: relative;
           cursor: pointer;
           border: 3px solid black;
-          font-size: 1.2em;
+          font-size: 1.1em;
           font-weight: 900;
           transition: 0.5s ease;
           &:hover{
@@ -118,6 +118,10 @@ nav {
     min-width: 1180px;
 }
 
+a{
+  text-decoration: none;
+  color: #000;
+}
 // Non-Special
 ::-moz-selection {
   background: $main-color;

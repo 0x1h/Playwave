@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+}
+
+.container .slogan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container .slogan h1 {
+  font-weight: 600;
+  color: #fff;
+  font-size: 7rem;
+  font-style: italic;
+}
+
+.container .form-container {
+  width: 100%;
+  position: relative;
+  padding: 20px 160px;
+}
+
+.container .form-container .form-box {
+  width: 100%;
+  background: #383838;
+  height: 100%;
+  border-radius: 30px;
+  position: inherit;
+  padding-top: 50px;
+}
+
+.container .form-container .form-box .base-inputs {
+  width: 100%;
+  height: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .form-container .form-box .base-inputs .img-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #1b1b1b;
+  cursor: pointer;
+  display: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .form-container .form-box .base-inputs .user-inputs {
+  width: 250px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .form-container .form-box .base-inputs .user-inputs input {
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  background: #1b1b1b;
+  border: 3px solid #0bff9f;
+  margin: 20px 0;
+  border-radius: 6px;
+  outline: none;
+}
+
+.container .secondary-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 20px;
+}
+
+.container .secondary-inputs input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  background: #1b1b1b;
+  border: 3px solid #0bff9f;
+  border-radius: 6px;
+  outline: none;
+  color: #ffffff;
+}
+
+.container .secondary-inputs textarea {
+  background: #1b1b1b;
+  border: 3px solid #0bff9f;
+  border-radius: 6px;
+  outline: none;
+  color: #fff;
+}
+
+.container .button-box {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .button-box button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #0bff9f;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
