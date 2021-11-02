@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import Nav from "../Landing/Nav"
 import Slogan from "./Slogan"
 import Form from "./Form"
@@ -9,12 +9,10 @@ interface SetupProp {
 }
 
 const Setup: React.FC<SetupProp> = ({code}) => {
-    const [auth, _] = useState(code)
-    console.log(auth)
 
     useEffect(() => {
-        localStorage.setItem("AuthCode", auth!)
-    }, [])
+        localStorage.setItem("AuthCode", code!)
+    }, [code])
 
     return (
         <div>

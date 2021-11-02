@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import DisplayEmptyImage from "./DisplayEmptyImage";
 import ImageBox from "./ImageBox";
 import { State } from "../../Hooks/Reducer";
@@ -19,7 +19,7 @@ const Form = () => {
   let history = useHistory()
 
   const redirectOnDashboard = () => {
-    history.push("/Dashboard")
+    history.push("/Home")
   }
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
@@ -52,7 +52,7 @@ const Form = () => {
         <form onSubmit={handleSubmit} className="form-box">
           <div className="base-inputs">
             <div className="img-circle" onClick={() => setOpenBox(true)} style={{overflow: 'hidden', position: 'relative'}}>
-              {formHandle.imgSrc ? <img src={formHandle.imgSrc} style={{width: "100%", position: "absolute"}}/> : <DisplayEmptyImage/>}
+              {formHandle.imgSrc ? <img src={formHandle.imgSrc} style={{width: "100%", position: "absolute"}} alt=""/> : <DisplayEmptyImage/>}
             </div>
             <div className="user-inputs">
               <input

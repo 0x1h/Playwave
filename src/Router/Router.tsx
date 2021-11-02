@@ -1,23 +1,31 @@
-import {BrowserRouter as Router, Route, Switch, Redirect, withRouter} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import { useState, useEffect } from "react";
 import Landing from "../Components/Landing/Landing"
 import Setup from "../Components/Setup/Setup"
-import Dashboard from "../Components/Dashboard/Dashboard"
+import Home from "../Components/Home/Home";
+import ProfileNav from "../Components/Home/ProfileNav";
 import {code} from "../App"
 
 const logined: string | null = localStorage.getItem('isAuth');
 
 const Playwave = () => {
+    const [displayNav, setDisplayNav] = useState<boolean>(false)
+
+    useEffect(() => {
+        if(logined){
+            setDisplayNav(true)
+        }
+    }, [displayNav])
+
     return (
         <Router>
+            {displayNav && <ProfileNav/>}
         <Switch>
-            
             <Route exact path="/">
                 {<Redirect to="/Welcome"/>}
             </Route>
 
-            {
-                logined && <Redirect to="/Dashboard" />
-            }
+            {logined && <Redirect exact from="/" to="/Home" />}
 
             <Route path="/Welcome">
                 <Landing />
@@ -31,12 +39,7 @@ const Playwave = () => {
                 <Setup code={code}/>
             </Route>
 
-            if(logined){
-                <Redirect to="/Dashboard"/>
-            }
-            <Route exact path="/Dashboard">
-                <Dashboard />
-            </Route>
+            <Route exact path="/Home" component={Home} />
 
         </Switch>
     </Router>
