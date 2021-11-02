@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import DisplayEmptyImage from "./DisplayEmptyImage";
 import ImageBox from "./ImageBox";
+import { State } from "../../Hooks/Reducer";
+import { useHistory } from "react-router-dom";
 
-export interface inputInterface {
-  imgSrc: string | undefined;
-  name: string;
-  surname: string;
-  nickname: string;
-  bio: string | undefined;
-}
-
-const formState: inputInterface = {
+const formState: State = {
   imgSrc: "",
   name: "",
   surname: "",
@@ -19,13 +13,27 @@ const formState: inputInterface = {
 };
 
 const Form = () => {
-  const [formHandle, setFormHandle] = useState<inputInterface>(formState);
+  const [formHandle, setFormHandle] = useState<State>(formState);
   const [openBox, setOpenBox] = useState(false);
+  const [isError, setIsError] = useState<boolean>(false)
+  let history = useHistory()
 
-  console.log(formHandle)
+  const redirectOnDashboard = () => {
+    history.push("/Dashboard")
+  }
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
+
+    if(!formHandle.name.trim() || !formHandle.surname.trim() || !formHandle.nickname.trim()){
+      setIsError(true)
+      alert("Nickname, name and surname are important, please fill these fields")
+    }else {
+      setIsError(false)
+      localStorage.setItem("user-data", JSON.stringify(formHandle))
+      localStorage.setItem("isAuth", "true")
+      redirectOnDashboard()
+    }
   };
 
   const inputHandler = (
@@ -53,6 +61,7 @@ const Form = () => {
                 placeholder="Name"
                 value={formHandle.name}
                 onChange={inputHandler}
+                className={isError ? "inputField warn": "inputField"}
               />
               <input
                 type="text"
@@ -60,6 +69,7 @@ const Form = () => {
                 placeholder="Surname"
                 value={formHandle.surname}
                 onChange={inputHandler}
+                className={isError ? "inputField warn": "inputField"}
               />
             </div>
           </div>
@@ -70,6 +80,7 @@ const Form = () => {
               name="nickname"
               value={formHandle.nickname}
               onChange={inputHandler}
+              className={isError ? "inputField warn": "inputField"}
             />
             <textarea
               name="bio"

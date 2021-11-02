@@ -62,7 +62,7 @@ $main-color: #0bff9f;
           height: 200px;
           @include Center;
           flex-direction: column;
-          input {
+          .inputField {
             color: #fff;
             width: 100%;
             height: 40px;
@@ -71,6 +71,9 @@ $main-color: #0bff9f;
             margin: 20px 0;
             border-radius: 6px;
             outline: none;
+            &.warn{
+              border: 3px solid red;
+            }
           }
         }
       }
@@ -80,7 +83,7 @@ $main-color: #0bff9f;
     display: flex;
     flex-direction: column;
     padding: 0 20px;
-    input {
+    .inputField {
       width: 100%;
       height: 40px;
       margin-bottom: 20px;
@@ -89,6 +92,9 @@ $main-color: #0bff9f;
       border-radius: 6px;
       outline: none;
       color: #ffffff;
+      &.warn{
+        border: 3px solid red;
+      }
     }
     textarea {
       background: $bg-color;
@@ -155,4 +161,7 @@ $main-color: #0bff9f;
 .emptyImage{
   @include Center;
   flex-direction: column;
+}
+.inputField.warn{
+  border: 3px solid red;
 }

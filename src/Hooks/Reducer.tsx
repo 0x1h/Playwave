@@ -1,5 +1,5 @@
 export type Action = {
-    type?: string;
+    type: string;
     payload?: string;
 }
 
@@ -11,8 +11,10 @@ export type State = {
     bio: string | undefined
 }
 
-export const reducer =  (state: State, action: Action) => {
+export const reducer =  (state: State, action: Action): void => {
     switch(action.type){
+        case "LOGIN": {
 
+        }
     }
 }

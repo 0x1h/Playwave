@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { inputInterface } from "./Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { State } from "../../Hooks/Reducer"
 
 interface ImageUpload {
-  img: inputInterface["imgSrc"];
+  img: State["imgSrc"];
   close: () => void;
   input: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
