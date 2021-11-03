@@ -12,9 +12,7 @@ const Playwave = () => {
     const [displayNav, setDisplayNav] = useState<boolean>(false)
 
     useEffect(() => {
-        if(logined){
-            setDisplayNav(true)
-        }
+        logined && setDisplayNav(true)
     }, [displayNav])
 
     return (
@@ -25,7 +23,7 @@ const Playwave = () => {
                 {<Redirect to="/Welcome"/>}
             </Route>
 
-            {logined && <Redirect exact from="/" to="/Home" />}
+            {displayNav && <Redirect exact from="/Welcome" to="/Home" />}
 
             <Route path="/Welcome">
                 <Landing />
