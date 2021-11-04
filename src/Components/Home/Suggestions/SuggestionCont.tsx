@@ -9,6 +9,7 @@ const SuggestionCont: React.FC<{setFalse: () => void}> = ({setFalse}) => {
        <div className="suggestion-container">
            <h1>Explore</h1>
            <div className="suggested-content">
+                //must be removed
                 <SuggestedContent name={"Swing Lyn - Twin Cabins"} imgSrc={test} setFalse={setFalse}/>
                 <SuggestedContent name={"Swing Lyn - Twin Cabins"} imgSrc={test} setFalse={setFalse}/>
                 <SuggestedContent name={"Swing Lyn - Twin Cabins"} imgSrc={test} setFalse={setFalse}/>
