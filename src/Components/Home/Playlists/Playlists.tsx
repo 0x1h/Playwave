@@ -1,9 +1,10 @@
 import {FC} from 'react'
 
-interface PlayListProps {
+export interface PlayListProps {
     name: string;
     imageUri: string | undefined
     key?: string
+    hideContainer?: () => void
 }
 
 const Playlists: FC<PlayListProps> = ({name, imageUri}) => {
