@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import DisplayEmptyImage from "./DisplayEmptyImage";
 import ImageBox from "./ImageBox";
-import { State } from "../../Hooks/Reducer";
 import { useHistory } from "react-router-dom";
+
+export type State = {
+  imgSrc: string | undefined;
+  name: string;
+  surname: string;
+  nickname: string;
+  bio: string | undefined
+}
 
 const formState: State = {
   imgSrc: "",
@@ -32,6 +39,7 @@ const Form = () => {
       setIsError(false)
       localStorage.setItem("user-data", JSON.stringify(formHandle))
       localStorage.setItem("isAuth", "true")
+      localStorage.setItem("playlists", "[]")
       redirectOnDashboard()
     }
   };

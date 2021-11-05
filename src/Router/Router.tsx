@@ -6,12 +6,11 @@ import Home from "../Components/Home/Home";
 import ProfileNav from "../Components/Home/ProfileNav";
 import {code} from "../App"
 
-const logined: string | null = localStorage.getItem('isAuth');
-
 const Playwave = () => {
     const [displayNav, setDisplayNav] = useState<boolean>(false)
 
     useEffect(() => {
+        const logined: string | null = localStorage.getItem('isAuth');
         logined && setDisplayNav(true)
     }, [displayNav])
 
@@ -23,7 +22,7 @@ const Playwave = () => {
                 {<Redirect to="/Welcome"/>}
             </Route>
 
-            {displayNav && <Redirect exact from="/Welcome" to="/Home" />}
+            {displayNav ? <Redirect exact from="/Welcome" to="/Home" /> : null}
 
             <Route path="/Welcome">
                 <Landing />

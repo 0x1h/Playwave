@@ -1,8 +1,9 @@
 import { FC, useState, useRef, useEffect } from 'react'
 import "../scss/addPlaylist.css"
 import { PlayListProps } from "../Playlists/Playlists"
+import { State } from "../Playlists/createPlayList"
 
-interface AddPlayListProps {showup: boolean, songname:string, setFalse: PlayListProps["hideContainer"]}
+interface AddPlayListProps {songname:string, setFalse: PlayListProps["hideContainer"]}
 
 const UserPlayLists: FC<PlayListProps> = ({name, imageUri, hideContainer}) => {
     return (
@@ -15,19 +16,13 @@ const UserPlayLists: FC<PlayListProps> = ({name, imageUri, hideContainer}) => {
     )
 }
 
-const AddToPlaylist: FC<AddPlayListProps> = ({showup, songname, setFalse}) => {
-    //must be removed these stuff
-    const [userPlayLists, setUserPlayLists] = useState<PlayListProps[]>([
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"},
-        {name: "<void />", imageUri:"https://i.pinimg.com/236x/25/97/33/2597338c5ecd8a37c4cc7a6154b9a6f1.jpg"} 
-    ])
-
+const AddToPlaylist: FC<AddPlayListProps> = ({songname, setFalse}) => {
+    const [userPlayLists, setUserPlayLists] = useState<State[]>([])
     const addPlaylistRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        setUserPlayLists(JSON.parse(localStorage.getItem("playlists")!)) 
+    }, [])
 
     const closeAddPlayList = (e: any) => {
         if (addPlaylistRef.current && !addPlaylistRef.current.contains(e.target)) {
@@ -42,7 +37,7 @@ const AddToPlaylist: FC<AddPlayListProps> = ({showup, songname, setFalse}) => {
     })
   
     return (
-        <div className={!showup ? "addPlaylist": "addPlaylist hidden"}>
+        <div className={"addPlaylist"}>
 
             <div className="add-playlist-container"  ref={addPlaylistRef}>
                 <div className="song-name-container">
@@ -51,7 +46,7 @@ const AddToPlaylist: FC<AddPlayListProps> = ({showup, songname, setFalse}) => {
                 <div className="user-playlists-container">
                     {
                         userPlayLists.map(playlist => {
-                            return <UserPlayLists name={playlist.name} imageUri={playlist.imageUri} hideContainer={setFalse}/>
+                            return <UserPlayLists name={playlist.playlistName} imageUri={playlist.playlistUri} hideContainer={setFalse} key={playlist.playlistName}/>
                         })
                     }
                 </div>

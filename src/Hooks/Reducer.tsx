@@ -1,20 +1,31 @@
+import { State } from "../Components/Home/Playlists/createPlayList"; 
+
 export type Action = {
     type: string;
-    payload?: string;
+    payload?: {
+        playlistUri: string;
+        playlistName: string;
+    };
 }
 
-export type State = {
-    imgSrc: string | undefined;
-    name: string;
-    surname: string;
-    nickname: string;
-    bio: string | undefined
-}
-
-export const reducer =  (state: State, action: Action): void => {
+export const reducer =  (state: State, action: Action): any => {
     switch(action.type){
-        case "LOGIN": {
+        case "ON_CHANGE":{
+            const nameInput = action.payload?.playlistName
+            const imgInput =  action.payload?.playlistUri
 
+            return {
+                ...state, 
+                playlistName: nameInput,
+                playlistUri: imgInput,
+            }
+        }
+        case "UPDATE_PLAYLISTS": {
+            const playlists = action.payload
+
+            return {
+                USER_PLAYLISTS: playlists 
+            }
         }
     }
 }

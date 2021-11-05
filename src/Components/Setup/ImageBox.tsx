@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { State } from "../../Hooks/Reducer"
+import { State } from "./Form"
 
 interface ImageUpload {
   img: State["imgSrc"];

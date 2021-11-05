@@ -1,11 +1,14 @@
 import {useEffect, useState} from 'react'
 import {useHistory} from "react-router-dom"
 import Logo from "../../Assets/Logo/Logo.png"
-import { State } from '../../Hooks/Reducer'
 import "./scss/nav-style.css"
 
+interface UserProps {
+    imgSrc: string
+}
+
 const ProfileNav = () => {
-    const [profileImg, setProfileImage] = useState<State | null>()
+    const [profileImg, setProfileImage] = useState<UserProps | null>()
 
     useEffect(() => {
         if(!profileImg) {
