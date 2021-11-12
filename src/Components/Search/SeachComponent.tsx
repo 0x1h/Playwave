@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import CreatePlayList from '../Home/Playlists/createPlayList'
 import PlaylistsCont from '../Home/Playlists/PlaylistsCont'
 import SearchBar from "./SearchBar"
+import Results from "./Results"
 import "./scss/search.css"
 
 function SeachComponent() {
@@ -14,6 +15,7 @@ function SeachComponent() {
             <PlaylistsCont addPlayListLayout={() => setAddPlayList(false)}/>
             <div className="search-component">
                 <SearchBar />
+                <Results />
             </div>
         </div>
         </React.Fragment>

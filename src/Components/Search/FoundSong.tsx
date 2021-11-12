@@ -3,7 +3,7 @@ import React from 'react'
 const ResultComponent = () => {
     return (
         <div className="result-component">
-
+            
         </div>
     )
 }

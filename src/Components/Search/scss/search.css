@@ -8,7 +8,6 @@
 .search-component {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
 }
 
 .search-component .SearchBar {
@@ -44,6 +43,8 @@
   width: 100%;
   height: calc(100% - 45px);
   height: 100%;
+  -webkit-box-shadow: inset 0 0 10px;
+          box-shadow: inset 0 0 10px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -89,9 +90,14 @@
   gap: 10px;
   height: 100%;
   overflow-y: auto;
+  -webkit-box-shadow: inset 0 0 10px;
+          box-shadow: inset 0 0 10px;
 }
 
 .search-component .Results-Container .FoundSong-Container .result-component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 50px;
   background: #000;
