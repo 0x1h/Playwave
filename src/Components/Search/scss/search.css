@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-component {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.search-component .SearchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 3px solid #0BFF9F;
+  background: #000;
+  height: 50px;
+  border-radius: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-component .SearchBar input {
+  width: 100%;
+  background: #000;
+  border: none;
+  color: #fff;
+  height: 40px;
+  font-size: 1.1rem;
+  outline: none;
+  margin-right: 10px;
+}
+
+.search-component .Results-Container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 600px;
+      grid-template-columns: auto 600px;
+  width: 100%;
+  height: calc(100% - 45px);
+  height: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+  .search-component .Results-Container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.search-component .Results-Container .Top-result {
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.search-component .Results-Container .Top-result .song-container {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 15px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.search-component .Results-Container .Top-result .song-container:hover {
+  background: #080808;
+}
+
+@media screen and (max-width: 1400px) {
+  .search-component .Results-Container .Top-result {
+    height: 300px;
+  }
+}
+
+.search-component .Results-Container .FoundSong-Container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  padding: 12px 10px;
+  width: 100%;
+  gap: 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.search-component .Results-Container .FoundSong-Container .result-component {
+  width: 100%;
+  height: 50px;
+  background: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-component .Results-Container .FoundSong-Container .result-component:hover {
+  background: #080808;
+}
+/*# sourceMappingURL=search.css.map */

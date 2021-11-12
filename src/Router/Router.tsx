@@ -4,6 +4,7 @@ import Landing from "../Components/Landing/Landing"
 import Setup from "../Components/Setup/Setup"
 import Home from "../Components/Home/Home";
 import ProfileNav from "../Components/Home/ProfileNav";
+import SearchComponent from "../Components/Search/SeachComponent";
 import {code} from "../App"
 
 const Playwave = () => {
@@ -38,6 +39,9 @@ const Playwave = () => {
 
             <Route exact path="/Home" component={Home} />
 
+            <Route path="/Search">
+                <SearchComponent />
+            </Route>
         </Switch>
     </Router>
     )
