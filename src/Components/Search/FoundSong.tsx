@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {FC} from 'react'
+import { SearchReultsType } from './SearchBar'
 
-const ResultComponent = () => {
+interface ResultProps {
+    songName: string;
+    imageUri: string;
+}
+
+const ResultComponent: React.FC<ResultProps> = ({songName, imageUri}) => {
     return (
         <div className="result-component">
             <div className="song-info">
@@ -8,10 +14,10 @@ const ResultComponent = () => {
                     <div className="play-bg">
                         <span className="triangle"></span>
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Kesha_Warrior.jpeg/220px-Kesha_Warrior.jpeg" alt="" />
+                    <img src={imageUri} alt="" />
                 </div>
                 <div className="song-stuff">
-                    <div className="song-name">Die Young</div>
+                    <div className="song-name">{songName}</div>
                 </div>
             </div>
             <div className="dot-box">
@@ -24,25 +30,16 @@ const ResultComponent = () => {
 }
 
 
-const FoundSong = () => {
+const FoundSong: FC<{results: SearchReultsType['songs']}> = ({results}) => {    
     return (
         <div className="FoundSong-Container">
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
-            <ResultComponent />            
+            {
+                results.slice(1).map((result) => {
+                    return (
+                        <ResultComponent songName={result.name} imageUri={result.small_image}/>  
+                    )
+                })
+            }   
         </div>
     )
 }

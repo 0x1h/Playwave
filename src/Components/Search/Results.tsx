@@ -1,16 +1,17 @@
-import { useReducer } from "react"
+import {FC} from 'react'
 import TopResult from "./TopResult"
 import FoundSong from "./FoundSong"
-import SearchReducer from "../../Hooks/SearchReducer"
-import { searchDefault } from "./SearchBar"
+import LoadingScreen from "./LoadingScreen"
+import { SearchReultsType } from './SearchBar'
 
-const Results = () => {
+const Results: FC<{results: SearchReultsType['songs'], load: boolean, displayResults: boolean}> = ({results, load, displayResults}) => {
     return (
         <div className="Results-Container">
-            <TopResult />
-            <FoundSong />
+            {load ? <LoadingScreen /> : null}
+            {displayResults ? <TopResult topresult={results}/>: null}
+            {displayResults ? <FoundSong results={results}/> : null}
         </div>
     )
 }
 
-export default Results
+export default Results 

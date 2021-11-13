@@ -4,7 +4,7 @@ type Action = {
     type: string;
     payload?: {
         input: string,
-        songs: any
+        songs: SearchReultsType['songs']
     };
 }
 
