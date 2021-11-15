@@ -6,4 +6,4 @@ This is personal project and it doesn't monetize me, everything what is shown th
 
 ## About
 
-Project uses [React](https://github.com/facebook/react) and [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+Project uses [React](https://github.com/facebook/react) and [Deezer API](https://developers.deezer.com/api)
