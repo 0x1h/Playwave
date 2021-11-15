@@ -1,4 +1,4 @@
-import React, {useReducer, useState, createContext} from 'react'
+import React, {useReducer, useState} from 'react'
 import SeacchReducer from "../../Hooks/SearchReducer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -24,18 +24,16 @@ interface setComponentProps {
     setLoader: () => void;
     displayResultsTrue: () => void
     displayResultsFalse: () => void
-
 }
 
 const SearchBar:React.FC<setComponentProps> = ({tranferResult, setLoader, displayResultsTrue, displayResultsFalse}) => {
     const [state, dispatch] = useReducer(SeacchReducer, searchDefault)
-    
-    //!Must be fixed double enter click issue 
-    const formHandler = async (e: React.FormEvent) => {
-        e.preventDefault()
+    const [readyData, setReadyData] = useState([])
+
+    const formHandler = async () => {
+        if(!state.input.trim()) return
         setLoader()
         displayResultsTrue()
-        if(!state.input.trim()) return
 
         await axios.get(`https://api.deezer.com/search?q=${state.input}`)
         .then(resp => {
@@ -47,14 +45,19 @@ const SearchBar:React.FC<setComponentProps> = ({tranferResult, setLoader, displa
                     track_Uri: song.preview
                 }
             }))
-            dispatch({type: "FOUND_SONGS", payload: {input: state.input, songs: filterResponse}}) 
             tranferResult!(state.songs)
-            setLoader()
             displayResultsFalse()
+            setLoader()
+            setReadyData(filterResponse)
+            dispatch({type: "FOUND_SONGS", payload: {input: state.input, songs: readyData}}) 
+            
         }).catch(err => console.log(err))
     }
     return (
-            <form onSubmit={formHandler}>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                formHandler()
+            }}>
                 <div className="SearchBar">
                     <FontAwesomeIcon icon={faSearch} size="2x" style={{color: '#FFF', marginLeft: '12px', paddingRight: '10px'}}/>
                     <input type="text" value={state.input} onChange={e => {
