@@ -34,7 +34,7 @@
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 500px;
+  height: 450px;
   place-items: center;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);

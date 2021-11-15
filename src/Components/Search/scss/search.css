@@ -82,7 +82,6 @@
   border-radius: 15px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  cursor: pointer;
 }
 
 .search-component .Results-Container .Top-result .song-container .top-result-img {
@@ -137,6 +136,9 @@
           align-items: center;
   background: #0BFF9F;
   border-radius: 50%;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  cursor: pointer;
   width: 80px;
   height: 80px;
 }
@@ -234,6 +236,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

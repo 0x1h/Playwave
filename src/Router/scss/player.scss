@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.song-player{
+    width: 100%;
+    transform: translateY(15px);
+    background: #000;
+}
+
+audio{
+    width: 100%;
+}
+
+// audio::-webkit-media-controls-panel{
+//     background-color: #000;
+// }
+// audio::-webkit-media-controls-play-button{
+//     background-color: #0BFF9F;
+//     border-radius: 50%;
+// }
+// audio::-webkit-media-controls-current-time-display,
+// audio::-webkit-media-controls-time-remaining-display{
+//     color: #fff;
+// }
+// audio::-webkit-media-controls-timeline{
+//     color: #0BFF9F;
+// }
+// audio::-webkit-media-controls-volume-slider{
+//     background: #0BFF9f;
+//     border-radius: 50%;
+// }

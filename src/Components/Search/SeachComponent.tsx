@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC, useEffect } from "react";
 import CreatePlayList from "../Home/Playlists/createPlayList";
 import PlaylistsCont from "../Home/Playlists/PlaylistsCont";
 import SearchBar from "./SearchBar";
@@ -6,19 +6,24 @@ import Results from "./Results";
 import { SearchReultsType } from "./SearchBar";
 import "./scss/search.css";
 
-interface DrillingProps {
-  results: SearchReultsType["songs"];
-}
-
-function SeachComponent() {
+const SeachComponent: FC<{setSelectedState: (url: string) => void}> = ({setSelectedState}) => {
   const [addPlayList, setAddPlayList] = useState<boolean>(true);
   const [results, setResults] = useState<SearchReultsType["songs"]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [displayResults, setDisplayResults] = useState(false);
+  const [selectedSong, setSelctedSong] = useState('')
 
   const setResultsState = (results: SearchReultsType["songs"]): void => {
     setResults(results);
   };
+
+  const setSelcted = (url: string) => {
+    setSelctedSong(url)
+  }
+
+  useEffect(() => {
+    setSelectedState(selectedSong)
+  })
 
   return (
     <React.Fragment>
@@ -30,11 +35,12 @@ function SeachComponent() {
         <div className="search-component">
           <SearchBar
             tranferResult={setResultsState}
-            setLoader={() => setIsLoading(!isLoading)}
+            setLoaderTrue={() => setIsLoading(true)}
+            setLoaderFalse={() => setIsLoading(false)}
             displayResultsTrue={() => setDisplayResults(false)}
             displayResultsFalse={() => setDisplayResults(true)}
           />
-          <Results results={results} load={isLoading} displayResults={displayResults}/>
+          <Results results={results} load={isLoading} displayResults={displayResults} setParentState={setSelcted}/>
         </div>
       </div>
     </React.Fragment>
