@@ -23,7 +23,7 @@ const SeachComponent: FC<{setSelectedState: (url: string) => void}> = ({setSelec
 
   useEffect(() => {
     setSelectedState(selectedSong)
-  })
+  }, [selectedSong])
 
   return (
     <React.Fragment>

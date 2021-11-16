@@ -49,7 +49,7 @@ const Playwave = () => {
                 <SearchComponent setSelectedState={setMusicState}/>
             </Route>
         </Switch>
-        <Player curr_song={selectedSong}/>
+        {displayNav ? <Player curr_song={selectedSong}/> : null}
     </Router>
     )
 }

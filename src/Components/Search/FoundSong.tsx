@@ -45,7 +45,12 @@ const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: string
 
     useEffect(() => {
         setMusic(song)
-    })
+    }, [song])
+
+    const keys = (): string => {
+      const randomNumber: number = Math.floor(1000 + Math.random() * 9000)
+      return randomNumber.toString()
+    }
 
   return (
     <div className="FoundSong-Container">
@@ -56,6 +61,7 @@ const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: string
             imageUri={result.small_image}
             song_url={result.track_Uri}
             updateState={updateSong}
+            key={keys()}
             />
         );
       })}

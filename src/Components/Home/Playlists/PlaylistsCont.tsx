@@ -58,7 +58,7 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout}) => {
         <div className="playlists-box">
             {
               playlist.map(e => {
-                return <Playlists name={e.playlistName} imageUri={e.playlistUri}/>
+                return <Playlists name={e.playlistName} imageUri={e.playlistUri} key={new Date().getTime().toString()}/>
               })
             }
         </div>
