@@ -6,7 +6,6 @@ import Home from "../Components/Home/Home";
 import ProfileNav from "../Components/Home/ProfileNav";
 import SearchComponent from "../Components/Search/SeachComponent";
 import Player from "./Player"
-import {code} from "../App"
 
 const Playwave = () => {
     const [displayNav, setDisplayNav] = useState<boolean>(false)
@@ -40,7 +39,7 @@ const Playwave = () => {
             </Route>
 
             <Route exact path="/Setup">
-                <Setup code={code}/>
+                <Setup />
             </Route>
 
             <Route exact path="/Home" component={Home} />

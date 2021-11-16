@@ -4,16 +4,7 @@ import Slogan from "./Slogan"
 import Form from "./Form"
 import "./scss/style.css"
 
-interface SetupProp {
-    code?: string | null
-}
-
-const Setup: React.FC<SetupProp> = ({code}) => {
-
-    useEffect(() => {
-        localStorage.setItem("AuthCode", code!)
-    }, [code])
-
+const Setup = () => {
     return (
         <div>
             <Nav />

@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { SearchReultsType } from "./SearchBar";
+import { defaultState } from "./Results";
 
-
+export interface TopResultProp {
+  name: string,
+  image: string,
+  song_url: string
+}
 
 const TopResult: React.FC<{
   topresult: SearchReultsType["songs"],
-  setMusic: (url: string) => void
+  setMusic: (url: TopResultProp) => void
 }> = ({ topresult, setMusic }) => {
-  const [topResultData, setTopResultData] = useState({
-    image: "",
-    name: "",
-    song_url: "",
-  });
+  const [topResultData, setTopResultData] = useState(defaultState);
 
   useEffect(() => {
     if (topresult[0] === undefined) return;
@@ -31,7 +32,7 @@ const TopResult: React.FC<{
         </div>
         <div className="song-options">
           <div className="song-name">{topResultData.name}</div>
-          <div className="play-btn" onClick={() => setMusic(topResultData.song_url)}>
+          <div className="play-btn" onClick={() => setMusic(topResultData)}>
             <span className="triangle"></span>
           </div>
         </div>

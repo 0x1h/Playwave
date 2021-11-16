@@ -25,6 +25,7 @@ interface setComponentProps {
   setLoaderFalse: () => void;
   displayResultsTrue: () => void;
   displayResultsFalse: () => void;
+  Work: SearchReultsType['songs']
 }
 
 const SearchBar: React.FC<setComponentProps> = ({
@@ -33,6 +34,7 @@ const SearchBar: React.FC<setComponentProps> = ({
   displayResultsTrue,
   displayResultsFalse,
   setLoaderFalse,
+  Work
 }) => {
   const [state, dispatch] = useReducer(SearchReducer, searchDefault);
 
@@ -53,12 +55,12 @@ const SearchBar: React.FC<setComponentProps> = ({
           };
         });
         tranferResult!(state.songs);
-        displayResultsFalse();
-        setLoaderFalse();
         dispatch({
           type: "FOUND_SONGS",
           payload: { input: state.input, songs: filterResponse },
         });
+          displayResultsFalse();
+          setLoaderFalse();
       })
       .catch((err) => console.log(err));
   };

@@ -1,30 +1,25 @@
 import React, { FC, useEffect, useState } from "react";
+import {defaultState} from "./Results"
 import { SearchReultsType } from "./SearchBar";
+import {TopResultProp} from "./TopResult"
 
 interface ResultProps {
-  songName: string;
-  imageUri: string;
-  song_url: string;
-  updateState: (url: string) => void
+  songData: TopResultProp
+  updateState: (url: TopResultProp) => void
 }
 
-const ResultComponent: React.FC<ResultProps> = ({
-  songName,
-  imageUri,
-  song_url,
-  updateState
-}) => {
+const ResultComponent: React.FC<ResultProps> = ({songData, updateState}) => {
   return (
-    <div className="result-component" onClick={() => updateState(song_url)}>
+    <div className="result-component" onClick={() => updateState(songData)}>
       <div className="song-info">
         <div className="song-img">
           <div className="play-bg">
             <span className="triangle"></span>
           </div>
-          <img src={imageUri} alt="" />
+          <img src={songData.image} alt="" />
         </div>
         <div className="song-stuff">
-          <div className="song-name">{songName}</div>
+          <div className="song-name">{songData.name}</div>
         </div>
       </div>
       <div className="dot-box">
@@ -36,10 +31,10 @@ const ResultComponent: React.FC<ResultProps> = ({
   );
 };
 
-const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: string) => void }> = ({ results, setMusic }) => {
-    const [song, setSong] = useState('')
+const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: TopResultProp) => void }> = ({ results, setMusic }) => {
+    const [song, setSong] = useState<TopResultProp>(defaultState)
 
-    const updateSong = (url: string) => {
+    const updateSong = (url: TopResultProp) => {
         setSong(url)
     }
 
@@ -52,19 +47,21 @@ const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: string
       return randomNumber.toString()
     }
 
-  return (
-    <div className="FoundSong-Container">
+    return (
+      <div className="FoundSong-Container">
       {results.slice(1).map((result) => {
         return (
           <ResultComponent
-            songName={result.name}
-            imageUri={result.small_image}
-            song_url={result.track_Uri}
-            updateState={updateSong}
-            key={keys()}
-            />
-        );
-      })}
+          songData={{
+            name: result.name,
+            image: result.small_image,
+            song_url: result.track_Uri
+          }}
+          updateState={updateSong}
+          key={keys()}
+          />
+          );
+        })}
     </div>
   );
 };

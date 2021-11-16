@@ -7,14 +7,15 @@ const Player: FC<{ curr_song: string | undefined}> = ({curr_song}) => {
     useEffect(() => {
       if(curr_song?.trim() === '') return 
 
-      audioRef.current!.pause()
-      audioRef.current!.load()
-      audioRef.current!.play()
+        audioRef.current!.pause()
+        audioRef.current!.load()
+        audioRef.current!.play()
+
     }, [curr_song])
 
   return (
     <div className="song-player">
-      <audio controls ref={audioRef}>
+      <audio controls ref={audioRef} controlsList="nodownload noplaybackrate">
         <source src={curr_song} type="audio/mp3"/>
       </audio>
     </div>
