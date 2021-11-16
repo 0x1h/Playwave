@@ -11,12 +11,15 @@ export const defaultState: TopResultProp = {
   song_url: ''
 }
 
-const Results: FC<{
+interface ResultProps {
   results: SearchReultsType["songs"];
   load: boolean;
   displayResults: boolean;
   setParentState: (url: TopResultProp) => void
-}> = ({ results, load, displayResults, setParentState }) => {
+  appearAdding: () => void
+}
+
+const Results: FC<ResultProps> = ({ results, load, displayResults, setParentState, appearAdding }) => {
   const [currMusic, setCurrMusic] = useState(defaultState);
   const setMusic = (url: TopResultProp) => {
     setCurrMusic(url);
@@ -33,7 +36,7 @@ const Results: FC<{
       {displayResults ? (
         <TopResult topresult={results} setMusic={setMusic} />
       ) : null}
-      {displayResults ? <FoundSong results={results} setMusic={setMusic} /> : null}
+      {displayResults ? <FoundSong results={results} setMusic={setMusic} appearAdding={appearAdding} /> : null}
     </div>
   );
 };

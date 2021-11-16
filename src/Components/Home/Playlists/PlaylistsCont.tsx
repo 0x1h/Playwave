@@ -14,7 +14,6 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout}) => {
   const [playlist, setPlaylist] = useState<State[]>([])
   let history = useHistory();
   
-
   useEffect(() => {
     const user_playlists = JSON.parse(localStorage.getItem("playlists")!)
     setPlaylist(user_playlists)

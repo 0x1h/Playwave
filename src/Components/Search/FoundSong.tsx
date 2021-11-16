@@ -6,9 +6,10 @@ import {TopResultProp} from "./TopResult"
 interface ResultProps {
   songData: TopResultProp
   updateState: (url: TopResultProp) => void
+  appearAdding: () => void
 }
 
-const ResultComponent: React.FC<ResultProps> = ({songData, updateState}) => {
+const ResultComponent: React.FC<ResultProps> = ({songData, updateState, appearAdding}) => {
   return (
     <div className="result-component" onClick={() => updateState(songData)}>
       <div className="song-info">
@@ -22,7 +23,7 @@ const ResultComponent: React.FC<ResultProps> = ({songData, updateState}) => {
           <div className="song-name">{songData.name}</div>
         </div>
       </div>
-      <div className="dot-box">
+      <div className="dot-box" onClick={appearAdding}>
         <span className="dots"></span>
         <span className="dots"></span>
         <span className="dots"></span>
@@ -31,7 +32,13 @@ const ResultComponent: React.FC<ResultProps> = ({songData, updateState}) => {
   );
 };
 
-const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: TopResultProp) => void }> = ({ results, setMusic }) => {
+interface FoundSongProps { 
+  results: SearchReultsType["songs"],
+  setMusic: (url: TopResultProp) => void,
+  appearAdding: ResultProps['appearAdding']
+}
+
+const FoundSong: FC<FoundSongProps> = ({ results, setMusic, appearAdding }) => {
     const [song, setSong] = useState<TopResultProp>(defaultState)
 
     const updateSong = (url: TopResultProp) => {
@@ -58,6 +65,7 @@ const FoundSong: FC<{ results: SearchReultsType["songs"], setMusic: (url: TopRes
             song_url: result.track_Uri
           }}
           updateState={updateSong}
+          appearAdding={appearAdding}
           key={keys()}
           />
           );
