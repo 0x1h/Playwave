@@ -7,6 +7,7 @@ import NoImage from "./NoImage";
 export type State = {
   playlistUri: string;
   playlistName: string;
+  song_id: string;
   songs?: {
     name: string;
     albumUri: string;
@@ -18,7 +19,8 @@ export type State = {
 export const defaultState: State = {
   playlistUri: "",
   playlistName: "",
-  songs: []
+  songs: [],
+  song_id: ""
 };
 
 const CreatePlayList: FC<{ close: () => void }> = ({ close }) => {
@@ -37,7 +39,7 @@ const CreatePlayList: FC<{ close: () => void }> = ({ close }) => {
         localStorage.setItem("playlists", "[]")
     }
     const currPlayLists = JSON.parse(localStorage.getItem("playlists")!)
-    const updatePlayList = [...currPlayLists, state]
+    const updatePlayList = [...currPlayLists, {...state, song_id: new Date().getTime().toString()}]
     
     localStorage.setItem("playlists", JSON.stringify(updatePlayList))
 

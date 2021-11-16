@@ -5,6 +5,7 @@ const Player: FC<{ curr_song: string | undefined}> = ({curr_song}) => {
   const audioRef = useRef<HTMLAudioElement>(null)
 
     useEffect(() => {
+      // Making Paly Promise
       if(curr_song?.trim() === '') return 
 
         audioRef.current!.pause()

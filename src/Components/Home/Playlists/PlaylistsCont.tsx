@@ -4,22 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import {State} from "./createPlayList"
 
 interface PlayListsProps {
     addPlayListLayout: () => void
 }
-
-export type State = {
-  playlistUri: string;
-  playlistName: string;
-  songs?: {
-    name: string;
-    albumUri: string;
-    artist: string;
-    spotifyKey: string;
-  }[];
-};
-
 
 const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout}) => {
   const [playlist, setPlaylist] = useState<State[]>([])
@@ -57,9 +46,9 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout}) => {
         </div>
         <div className="playlists-box">
             {
-              playlist.map(e => {
-                return <Playlists name={e.playlistName} imageUri={e.playlistUri} key={new Date().getTime().toString()}/>
-              })
+               playlist !== null ? playlist.map(e => {
+                return <Playlists name={e.playlistName} imageUri={e.playlistUri} key={e.song_id}/>
+              }) : <p style={{color: "#FFF"}}>There is no any playlist 😢</p> 
             }
         </div>
       </div> 

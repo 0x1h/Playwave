@@ -55,12 +55,15 @@ const SearchBar: React.FC<setComponentProps> = ({
           };
         });
         tranferResult!(state.songs);
+        displayResultsFalse();
+        setLoaderFalse();
         dispatch({
           type: "FOUND_SONGS",
           payload: { input: state.input, songs: filterResponse },
         });
-          displayResultsFalse();
-          setLoaderFalse();
+        if(Work){
+
+        }
       })
       .catch((err) => console.log(err));
   };

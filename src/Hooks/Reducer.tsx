@@ -5,6 +5,7 @@ export type Action = {
     payload?: {
         playlistUri: string;
         playlistName: string;
+        song_id: string
     };
 }
 

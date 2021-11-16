@@ -10,6 +10,7 @@ import "./scss/search.css";
 
 const SeachComponent: FC<{setSelectedState: (url: string) => void}> = ({setSelectedState}) => {
   //Todo: Change that states to useReducer
+  //Todo: Makes Big Confusion! 
   const [addPlayList, setAddPlayList] = useState<boolean>(true);
   const [results, setResults] = useState<SearchReultsType["songs"]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -42,6 +43,7 @@ const SeachComponent: FC<{setSelectedState: (url: string) => void}> = ({setSelec
         <div className="search-component">
           <SearchBar
             Work={results}
+            //Todo: Can be reduce states and use
             tranferResult={setResultsState}
             setLoaderTrue={() => setIsLoading(true)}
             setLoaderFalse={() => setIsLoading(false)}

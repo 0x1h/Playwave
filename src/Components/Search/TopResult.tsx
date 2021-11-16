@@ -15,11 +15,14 @@ const TopResult: React.FC<{
   const [topResultData, setTopResultData] = useState(defaultState);
 
   useEffect(() => {
+    //Don't Update state if response is undefined    
     if (topresult[0] === undefined) return;
+    
     setTopResultData({
       image: topresult[0].medium_image,
       name: topresult[0].name,
       song_url: topresult[0].track_Uri,
+    
     });
   }, []);
 

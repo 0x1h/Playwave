@@ -22,6 +22,7 @@ const Results: FC<{
     setCurrMusic(url);
   };
 
+  //Setting Chosen Music data in parent useState
   useEffect(() => {
       setParentState(currMusic);
   }, [currMusic]);
