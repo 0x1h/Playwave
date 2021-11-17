@@ -71,9 +71,9 @@ const AddToPlaylist: FC<AddPlayListProps> = ({ songname, setFalse, song_data }) 
                   name={playlist.playlistName}
                   imageUri={playlist.playlistUri} 
                   hideContainer={setFalse}
-                  key={playlist.song_id}
-                  addToPlayList={() => addSongToPlaylist(playlist.song_id)}
-                  playlist_id={playlist.song_id}
+                  key={playlist.playlist_id}
+                  addToPlayList={() => addSongToPlaylist(playlist.playlist_id)}
+                  playlist_id={playlist.playlist_id}
                 />
               );
             })

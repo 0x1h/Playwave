@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react'
 import Nav from "../Landing/Nav"
 import Slogan from "./Slogan"
 import Form from "./Form"

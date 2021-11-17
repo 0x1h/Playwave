@@ -1,5 +1,7 @@
 import { SearchReultsType } from "../Components/Search/SearchBar";
 
+
+//Todo: after refactor I will use that file
 export type State = {
     addPlayList?: boolean;
     results?: SearchReultsType['songs'];

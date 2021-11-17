@@ -7,20 +7,19 @@ import NoImage from "./NoImage";
 export type State = {
   playlistUri: string;
   playlistName: string;
-  song_id: string;
-  songs?: { 
+  playlist_id: string;
+  songs: { 
     name: string;
     albumUri: string;
     artist: string;
-    spotifyKey: string;
   }[];
 };
 
 export const defaultState: State = {
   playlistUri: "",
   playlistName: "",
-  songs: [],
-  song_id: ""
+  playlist_id: "",
+  songs: []
 };
 
 const CreatePlayList: FC<{ close: () => void }> = ({ close }) => {
