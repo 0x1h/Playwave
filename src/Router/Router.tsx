@@ -5,6 +5,7 @@ import Setup from "../Components/Setup/Setup"
 import Home from "../Components/Home/Home";
 import ProfileNav from "../Components/Home/ProfileNav";
 import SearchComponent from "../Components/Search/SeachComponent";
+import CurrPlaylist from "../Components/Current Playlist/CurrPlaylist"
 import Player from "./Player"
 
 const Playwave = () => {
@@ -41,6 +42,8 @@ const Playwave = () => {
             <Route exact path="/Setup">
                 <Setup />
             </Route>
+
+            <Route path="/Playlist/:id" children={<CurrPlaylist />}></Route>
 
             <Route exact path="/Home" component={Home} />
 

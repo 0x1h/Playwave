@@ -10,25 +10,10 @@
     background: #000;
 }
 
-audio{
+.song-player{
+    position: fixed;
+    bottom: 0;
+    transform: translateY(-2px);
     width: 100%;
+    audio{width: inherit}
 }
-
-// audio::-webkit-media-controls-panel{
-//     background-color: #000;
-// }
-// audio::-webkit-media-controls-play-button{
-//     background-color: #0BFF9F;
-//     border-radius: 50%;
-// }
-// audio::-webkit-media-controls-current-time-display,
-// audio::-webkit-media-controls-time-remaining-display{
-//     color: #fff;
-// }
-// audio::-webkit-media-controls-timeline{
-//     color: #0BFF9F;
-// }
-// audio::-webkit-media-controls-volume-slider{
-//     background: #0BFF9f;
-//     border-radius: 50%;
-// }

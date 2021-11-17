@@ -1,14 +1,12 @@
-import { FC, useState, useRef, useEffect, EventHandler } from "react";
+import { FC, useState, useRef, useEffect} from "react";
 import { PlayListProps } from "../Playlists/Playlists";
 import { State } from "../Playlists/createPlayList";
 import { TopResultProp } from "../../Search/TopResult";
-import { defaultState } from "../../Search/Results";
 import "../scss/addPlaylist.css";
 
 const UserPlayLists: FC<PlayListProps> = ({
   name,
   imageUri,
-  hideContainer,
   playlist_id,
   addToPlayList
 }) => {
@@ -75,6 +73,7 @@ const AddToPlaylist: FC<AddPlayListProps> = ({ songname, setFalse, song_data }) 
                   hideContainer={setFalse}
                   key={playlist.song_id}
                   addToPlayList={() => addSongToPlaylist(playlist.song_id)}
+                  playlist_id={playlist.song_id}
                 />
               );
             })

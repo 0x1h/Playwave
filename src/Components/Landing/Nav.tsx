@@ -10,7 +10,7 @@ function Nav() {
                     <div className="logo-box">
                         <img src={logo} alt="" />
                     </div>
-                    <div className="Name" style={{color: "#0BFF9F", fontWeight: 600}}>SoundWave</div>
+                    <div className="Name" style={{color: "#0BFF9F", fontWeight: 600}}>PlayWave</div>
                 </div>
                 <div className="direct-links">
                     <Link to="/Welcome">Source</Link>

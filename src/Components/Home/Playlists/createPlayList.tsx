@@ -1,14 +1,14 @@
 import { FC, useState, useReducer } from "react";
 import ImageInput from "./imageInput";
 import "../scss/createPlaylist.css";
-import { reducer } from "../../../Hooks/Reducer";
+import { reducer } from "../../../Hooks/reducer";
 import NoImage from "./NoImage";
 
 export type State = {
   playlistUri: string;
   playlistName: string;
   song_id: string;
-  songs?: {
+  songs?: { 
     name: string;
     albumUri: string;
     artist: string;

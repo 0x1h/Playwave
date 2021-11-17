@@ -1,5 +1,5 @@
-import React, { useReducer, useState } from "react";
-import SearchReducer from "../../Hooks/SearchReducer";
+import React, { useReducer } from "react";
+import { searchreducer } from "../../Hooks/SearchReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -36,7 +36,7 @@ const SearchBar: React.FC<setComponentProps> = ({
   setLoaderFalse,
   Work
 }) => {
-  const [state, dispatch] = useReducer(SearchReducer, searchDefault);
+  const [state, dispatch] = useReducer(searchreducer, searchDefault);
 
   const formHandler = async () => {
     if (!state.input.trim()) return;

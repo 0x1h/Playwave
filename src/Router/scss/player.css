@@ -12,7 +12,15 @@
   background: #000;
 }
 
-audio {
+.song-player {
+  position: fixed;
+  bottom: 0;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
   width: 100%;
+}
+
+.song-player audio {
+  width: inherit;
 }
 /*# sourceMappingURL=player.css.map */

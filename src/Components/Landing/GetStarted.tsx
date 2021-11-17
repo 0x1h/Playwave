@@ -12,7 +12,7 @@ const GetStarted = () => {
             </div>
             <div className="Authorize">
                 <div className="authorize-button" onClick={() => history.push("/Setup")}>
-                    <p>Authorize with Spotify</p>
+                    <p>Sign up</p>
                 </div>
             </div>
         </div>

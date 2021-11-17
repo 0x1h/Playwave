@@ -8,7 +8,7 @@ type Action = {
     };
 }
 
-const SearchReducer = (State: SearchReultsType, action: Action): any => {
+export const searchreducer = (State: SearchReultsType, action: Action): any => {
     switch (action.type) {
         case "ON_CHANGE": {
             return {
@@ -24,5 +24,3 @@ const SearchReducer = (State: SearchReultsType, action: Action): any => {
         }
     }
 }
-
-export default SearchReducer
