@@ -33,7 +33,7 @@ const AddToPlaylist: FC<AddPlayListProps> = ({ songname, setFalse, song_data }) 
         //Grabbing Whole Playlist Storage
         const curr_playlist = JSON.parse(localStorage.getItem('playlists')!)
         //Grabbing index of selected Playlist
-        let playListIndex = curr_playlist.findIndex((playlist: any) => playlist.song_id === id)
+        let playListIndex = curr_playlist.findIndex((playlist: any) => playlist.playlist_id === id)
         //adding in selected chosen song with another songs
         const updatePlayListSongs = [...curr_playlist[playListIndex].songs, song_data]
         //updating playlist
