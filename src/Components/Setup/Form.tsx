@@ -25,10 +25,6 @@ const Form = () => {
   const [isError, setIsError] = useState<boolean>(false)
   let history = useHistory()
 
-  const redirectOnDashboard = () => {
-    history.push("/Home")
-  }
-
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
@@ -40,7 +36,7 @@ const Form = () => {
       localStorage.setItem("user-data", JSON.stringify(formHandle))
       localStorage.setItem("isAuth", "true")
       localStorage.setItem("playlists", "[]")
-      redirectOnDashboard()
+      history.push("/Home")
     }
   };
 
