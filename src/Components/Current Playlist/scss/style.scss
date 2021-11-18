@@ -99,6 +99,10 @@
       #img-box {
         position: relative;
         border-radius: 9px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
       }
       #song-name {
         display: inherit;

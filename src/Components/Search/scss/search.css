@@ -82,6 +82,37 @@
   border-radius: 15px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  position: relative;
+}
+
+.search-component .Results-Container .Top-result .song-container .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70px;
+  padding: 0 15px;
+  height: 15px;
+  background: #303030;
+  position: absolute;
+  border-radius: 50px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(-20px, -20px);
+          transform: translate(-20px, -20px);
+  cursor: pointer;
+}
+
+.search-component .Results-Container .Top-result .song-container .options .dot {
+  width: 7px;
+  height: 7px;
+  background: #FFF;
+  border-radius: 50%;
 }
 
 .search-component .Results-Container .Top-result .song-container .top-result-img {

@@ -52,6 +52,28 @@
         background: #000;
         border-radius: 15px;
         transition: 0.3s ease;
+        position: relative;
+        .options{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 70px;
+          padding: 0 15px;
+          height: 15px;
+          background: #303030;
+          position: absolute;
+          border-radius: 50px;
+          right: 0;
+          bottom: 0;
+          transform: translate(-20px, -20px);
+          cursor: pointer;
+          .dot{
+            width: 7px;
+            height: 7px;
+            background: #FFF;
+            border-radius: 50%;
+          }
+        }
         .top-result-img {
           position: relative;
           width: 250px;

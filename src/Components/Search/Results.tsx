@@ -30,11 +30,16 @@ const Results: FC<ResultProps> = ({ results, load, displayResults, setParentStat
       setParentState(currMusic);
   }, [currMusic]);
 
+  const TopResultSet = (url: TopResultProp) => {
+    appearAdding()
+    setCurrMusic(url)
+  }
+
   return (
     <div className="Results-Container">
       {load ? <LoadingScreen /> : null}
       {displayResults ? (
-        <TopResult topresult={results} setMusic={setMusic} />
+        <TopResult topresult={results} setMusic={setMusic} appearAdd={TopResultSet}/>
       ) : null}
       {displayResults ? <FoundSong results={results} setMusic={setMusic} appearAdding={appearAdding} /> : null}
     </div>

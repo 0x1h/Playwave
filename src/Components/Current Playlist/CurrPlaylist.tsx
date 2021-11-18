@@ -55,7 +55,7 @@ const CurrPlaylist:FC<{setData: (data: PlaylistType[]) => void, newAdded: Playli
             state.curr_playlist.songs.length > 0 ? 
             state.curr_playlist.songs.map((song: any, i: number) => {
               return (
-                <PlaylistSong index={i+1} img_url={song.image} song_name={song.name} song_uri={song.song_url}/>
+                <PlaylistSong index={i+1} img_url={song.image} song_name={song.name} song_uri={song.song_url} key={song.song_url}/>
               )
             }):
             <h3 style={{color: '#fff'}}>There is no any playlist 😢</h3>

@@ -161,6 +161,11 @@
 .playlist-main .Playlist_Song .song-main-info #img-box {
   position: relative;
   border-radius: 9px;
+  overflow: hidden;
+}
+
+.playlist-main .Playlist_Song .song-main-info #img-box img {
+  width: 100%;
 }
 
 .playlist-main .Playlist_Song .song-main-info #song-name {

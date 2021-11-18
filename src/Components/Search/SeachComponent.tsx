@@ -10,7 +10,13 @@ import { TopResultProp } from "./TopResult";
 import AddToPlaylist from "../Home/Suggestions/AddToPlaylist";
 import "./scss/search.css";
 
-interface SearchProps { setSelectedState: (url: string) => void, setData: (data: State[]) => void, newAdded: State[]}
+interface SearchProps { 
+  setSelectedState: (url: string) => void, 
+  setData: (data: State[]) => void, 
+  newAdded: State[]
+}
+
+
 const SeachComponent: FC<SearchProps> = ({
   setSelectedState,
   setData,
