@@ -8,7 +8,7 @@ export type State = {
   playlistUri: string;
   playlistName: string;
   playlist_id: string;
-  songs: { 
+  songs?: { 
     name: string;
     albumUri: string;
     artist: string;
@@ -22,7 +22,7 @@ export const defaultState: State = {
   songs: []
 };
 
-const CreatePlayList: FC<{ close: () => void }> = ({ close }) => {
+const CreatePlayList: FC<{ close: () => void, setData: (data: State[]) => void }> = ({ close, setData }) => {
   const [openImageInput, setOpenImageInput] = useState<boolean>(true);
   const [state, dispatch] = useReducer(reducer, defaultState);
 
@@ -38,9 +38,10 @@ const CreatePlayList: FC<{ close: () => void }> = ({ close }) => {
         localStorage.setItem("playlists", "[]")
     }
     const currPlayLists = JSON.parse(localStorage.getItem("playlists")!)
-    const updatePlayList = [...currPlayLists, {...state, playlist_id: new Date().getTime().toString()}]
+    const updatePlayList: State[] = [...currPlayLists, {...state, playlist_id: new Date().getTime().toString()}]
     
     localStorage.setItem("playlists", JSON.stringify(updatePlayList))
+    setData!(updatePlayList)
 
     close!()
   };

@@ -1,7 +1,7 @@
-import { Fragment,  useReducer, useEffect } from "react";
+import { Fragment,  useReducer, useEffect, FC } from "react";
 import { useParams } from "react-router-dom";
 import { playlistReducer, State } from "../../Hooks/CurrplaylistHook";
-import {State as PlaylistType, defaultState} from "../Home/Playlists/createPlayList";
+import { State as PlaylistType, defaultState } from "../Home/Playlists/createPlayList";
 import PlaylistSong from "./PlaylistSong";
 import PlaylistsCont from "../Home/Playlists/PlaylistsCont";
 import CreatePlayList from "../Home/Playlists/createPlayList";
@@ -12,7 +12,7 @@ const defaultPlaylistState: State = {
   showAddPlaylist: false,
 };
 
-const CurrPlaylist = () => {
+const CurrPlaylist:FC<{setData: (data: PlaylistType[]) => void, newAdded: PlaylistType[] }>  = ({setData, newAdded}) => {
   const [state, dispatch] = useReducer(playlistReducer, defaultPlaylistState);
   const { id } = useParams<{ id: string }>();
 
@@ -28,6 +28,7 @@ const CurrPlaylist = () => {
       {state.showAddPlaylist ? (
         <CreatePlayList
           close={() => dispatch({ type: "SHOW_ADD_PLAYLIST", payload: false })}
+          setData={setData!}
         />
       ) : null}
       <div className="home-container">
@@ -35,7 +36,8 @@ const CurrPlaylist = () => {
           addPlayListLayout={() =>
             dispatch({ type: "SHOW_ADD_PLAYLIST", payload: true })
           }
-        />
+          newAdded={newAdded}
+          />
         <div className="playlist-main">
           <div className="playlist-info">
             <div className="wrapper">

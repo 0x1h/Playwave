@@ -7,15 +7,21 @@ import { useHistory } from "react-router-dom";
 import {State} from "./createPlayList"
 
 interface PlayListsProps {
-    addPlayListLayout: () => void
+    addPlayListLayout: () => void,
+    newAdded: State[]
 }
 
-const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout}) => {
+const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout, newAdded}) => {
   const [playlist, setPlaylist] = useState<State[]>([])
+
   let history = useHistory();
   
   useEffect(() => {
-    const user_playlists = JSON.parse(localStorage.getItem("playlists")!)
+    setPlaylist(newAdded!)
+  }, [newAdded])
+
+  useEffect(() => {
+    const user_playlists = JSON.parse(localStorage.getItem("playlists")!) 
     setPlaylist(user_playlists)
   }, [])
 

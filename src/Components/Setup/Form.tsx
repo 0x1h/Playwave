@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {FC, useState } from "react";
 import DisplayEmptyImage from "./DisplayEmptyImage";
 import ImageBox from "./ImageBox";
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,7 @@ const formState: State = {
   bio: "",
 };
 
-const Form = () => {
+const Form: FC<{appearComponent: () => void}> = ({appearComponent}) => {
   const [formHandle, setFormHandle] = useState<State>(formState);
   const [openBox, setOpenBox] = useState(false);
   const [isError, setIsError] = useState<boolean>(false)
@@ -37,6 +37,7 @@ const Form = () => {
       localStorage.setItem("isAuth", "true")
       localStorage.setItem("playlists", "[]")
       history.push("/Home")
+      appearComponent()
     }
   };
 

@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import { useState, useEffect } from "react";
+import { State } from "../Components/Home/Playlists/createPlayList";
 import Landing from "../Components/Landing/Landing"
 import Setup from "../Components/Setup/Setup"
 import Home from "../Components/Home/Home";
@@ -11,6 +12,11 @@ import Player from "./Player"
 const Playwave = () => {
     const [displayNav, setDisplayNav] = useState<boolean>(false)
     const [selectedSong, setSelctedSong] = useState<string>('')
+    const [playlists, setPlaylists] = useState<State[]>([])
+
+    const setData = (data: State[]): void => {
+        setPlaylists(data)
+    }
 
     useEffect(() => {
         const logined: string | null = localStorage.getItem('isAuth');
@@ -23,7 +29,7 @@ const Playwave = () => {
 
     return (
         <Router>
-            {displayNav && <ProfileNav/>}
+            {displayNav && <ProfileNav/>} 
         <Switch>
             <Route exact path="/">
                 {<Redirect to="/Welcome"/>}
@@ -40,15 +46,17 @@ const Playwave = () => {
             </Route>
 
             <Route exact path="/Setup">
-                <Setup />
+                <Setup appearComponent={() => setDisplayNav(true)}/>
             </Route>
 
-            <Route path="/Playlist/:id" children={<CurrPlaylist />}></Route>
+            <Route path="/Playlist/:id" children={<CurrPlaylist setData={setData} newAdded={playlists}/>}></Route>
 
-            <Route exact path="/Home" component={Home} />
+            <Route exact path="/Home" >
+                <Home setData={setData} playlists={playlists}/>
+            </Route>
 
             <Route path="/Search">
-                <SearchComponent setSelectedState={setMusicState}/>
+                <SearchComponent setSelectedState={setMusicState} setData={setData} newAdded={playlists}/>
             </Route>
         </Switch>
         {displayNav ? <Player curr_song={selectedSong}/> : null}

@@ -1,6 +1,7 @@
 import React, { useState, FC, useEffect } from "react";
 import CreatePlayList from "../Home/Playlists/createPlayList";
 import PlaylistsCont from "../Home/Playlists/PlaylistsCont";
+import { State } from "../Home/Playlists/createPlayList";
 import SearchBar from "./SearchBar";
 import Results from "./Results";
 import { SearchReultsType } from "./SearchBar";
@@ -9,8 +10,11 @@ import { TopResultProp } from "./TopResult";
 import AddToPlaylist from "../Home/Suggestions/AddToPlaylist";
 import "./scss/search.css";
 
-const SeachComponent: FC<{ setSelectedState: (url: string) => void }> = ({
+interface SearchProps { setSelectedState: (url: string) => void, setData: (data: State[]) => void, newAdded: State[]}
+const SeachComponent: FC<SearchProps> = ({
   setSelectedState,
+  setData,
+  newAdded
 }) => {
   //Todo: Change that states to useReducer
   //Todo: Makes Big Confusion!
@@ -47,10 +51,10 @@ const SeachComponent: FC<{ setSelectedState: (url: string) => void }> = ({
         />
       ) : null}
       {!addPlayList ? (
-        <CreatePlayList close={() => setAddPlayList(true)} />
+        <CreatePlayList close={() => setAddPlayList(true)} setData={setData}/>
       ) : null}
       <div className="home-container">
-        <PlaylistsCont addPlayListLayout={() => setAddPlayList(false)} />
+        <PlaylistsCont addPlayListLayout={() => setAddPlayList(false)} newAdded={newAdded}/>
         <div className="search-component">
           <SearchBar
             Work={results}
