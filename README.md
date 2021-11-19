@@ -14,7 +14,7 @@ and **HUGE HUGE HUGE Thank you for [Deezer API](https://www.deezer.com/us/) for 
 * modify profile
 * edit and delete songs/playlist
 
-wanna hear a joke? this website is serverless and dones't use Database xDD
+wanna hear a joke? this website is serverless and doesn't use any Database xDD
 yeah yeah, you guess right website uses **localStorage** so that means every stuff what you do, add, edit or something else everything go in your browser, if you clean up your browser or move on another browser all your stuff will be gone :((
 
 wanna contribute on that project? contribution is closed yet ;/ because i'm not planning to continue this project anymore, but in the feature what will happen I don't really know so don't kill your hopes :))
