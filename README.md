@@ -20,3 +20,23 @@ yeah yeah, you guess right website uses **localStorage** so that means every stu
 wanna contribute on that project? contribution is closed yet ;/ because i'm not planning to continue this project anymore, but in the feature what will happen I don't really know so don't kill your hopes :))
 
 Main contributor: **[callmenikk](https://github.com/callmenikk)**
+
+
+## How to run?
+
+first of all you need [node.js](https://nodejs.org/en/) at least version **5.2.0**
+
+then run this command in terminal
+```js
+npm install
+```
+
+it will install all dependencies what I used in Project
+
+if project is ready to launch run this command line 
+
+```js
+npm start
+```
+
+now you are free to go ;)
