@@ -2,9 +2,9 @@
     <img src="https://i.ibb.co/tMkN615/forreadme.png">
 </div>
 
-**Playwave is Open-Source **Music streaming platform** 
+Playwave is Open-Source **Music streaming platform** 
 
-which is mainly written in [Typescript](https://github.com/microsoft/TypeScript) and [React.js](https://github.com/facebook/react)
+Which is mainly written in **[Typescript](https://github.com/microsoft/TypeScript)** and in **[React.js](https://github.com/facebook/react)**
 
 and **HUGE HUGE HUGE Thank you for [Deezer API](https://www.deezer.com/us/) for giving me all this musics data, even 30 seconds long audio**
 
