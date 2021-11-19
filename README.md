@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://i.ibb.co/tMkN615/forreadme.png">
+    <img src="https://i.ibb.co/tMkN615/forreadme.png" width="300px">
 </div>
 
 Playwave is Open-Source **Music streaming platform** 
