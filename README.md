@@ -24,7 +24,7 @@ Main contributor: **[callmenikk](https://github.com/callmenikk)**
 
 ## How to run?
 
-first of all you need [node.js](https://nodejs.org/en/) at least version **5.2.0**
+first of all you need [node.js](https://nodejs.org/en/) at least version **>=5.2.0*
 
 then run this command in terminal
 ```js
