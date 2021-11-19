@@ -1,0 +1,125 @@
+.edit-component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.edit-component .edit-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 600px;
+  width: 400px;
+  height: 450px;
+  background: #383838;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px;
+          box-shadow: 0 0 10px;
+}
+
+.edit-component .edit-box .main-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.edit-component .edit-box .main-options .image-update {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 10px;
+  height: inherit;
+  width: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.edit-component .edit-box .main-options .image-update .image-url-input {
+  width: 100%;
+}
+
+.edit-component .edit-box .main-options .image-update .image-url-input input {
+  background: transparent;
+  border: 2px solid #0BFF9F;
+  border-radius: 6px;
+  color: #FFF;
+  outline: none;
+  width: 100%;
+  height: 40px;
+}
+
+.edit-component .edit-box .main-options .image-update .image-url-input input:focus {
+  background: #000;
+}
+
+.edit-component .edit-box .main-options .image-update .img-box {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #0BFF9F;
+  border-radius: 10px;
+}
+
+.edit-component .edit-box .main-options .image-update .img-box img {
+  width: 100%;
+}
+
+.edit-component .edit-box .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  padding: 0 60px;
+  padding-bottom: 60px;
+}
+
+.edit-component .edit-box .btn-container button {
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background: #0BFF9F;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.edit-component .edit-box .btn-container button:nth-child(1) {
+  background: #000;
+  color: #FFF;
+}
+/*# sourceMappingURL=edit-style.css.map */

@@ -41,7 +41,121 @@
   background: #383838;
   border-radius: 20px;
   border: 3px solid #0bff9f;
-  padding: 0 10rem;
+  padding-left: 10px;
+  position: relative;
+}
+
+.playlist-main .playlist-info .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  background: #1f1f1f;
+  right: 0;
+  top: 0;
+  border-radius: 40px;
+  -webkit-transform: translate(-20px, 10px);
+          transform: translate(-20px, 10px);
+  cursor: pointer;
+  padding: 0 13px;
+}
+
+.playlist-main .playlist-info .options .dot {
+  width: 5px;
+  height: 5px;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+.playlist-main .playlist-info .options-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 150px;
+  height: 90px;
+  right: 0;
+  top: 0;
+  background: #1f1f1f;
+  border-radius: 15px 0 15px 15px;
+  -webkit-transform: translate(-40px, 15px);
+          transform: translate(-40px, 15px);
+  -webkit-box-shadow: 2px 5px 10px;
+          box-shadow: 2px 5px 10px;
+}
+
+.playlist-main .playlist-info .options-box * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.playlist-main .playlist-info .options-box .delete-btn {
+  color: #ff5353;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 40px;
+}
+
+.playlist-main .playlist-info .options-box .delete-btn:hover {
+  background: #ff5353;
+  color: #000;
+}
+
+.playlist-main .playlist-info .options-box .delete-btn:hover .fa-trash-alt {
+  color: #000;
+}
+
+.playlist-main .playlist-info .options-box .edit-btn {
+  width: 100%;
+  color: #FFF;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 10px;
+  padding-left: 50px;
+}
+
+.playlist-main .playlist-info .options-box .edit-btn:hover {
+  background: #585858;
+}
+
+@media screen and (max-width: 1410px) {
+  .playlist-main .playlist-info {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 731px) {
+  .playlist-main .playlist-info {
+    padding: 0 1rem;
+  }
 }
 
 .playlist-main .playlist-info .wrapper {
@@ -51,22 +165,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 200px;
-  width: 200px;
   width: 100%;
   height: 100%;
 }
 
 .playlist-main .playlist-info .wrapper .playlist-img {
-  height: 250px;
-  width: 250px;
-  border-radius: 20px;
   overflow: hidden;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
-  -o-object-position: 0 0;
-     object-position: 0 0;
-  /*top left position (optional)*/
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 250px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 731px) {
+  .playlist-main .playlist-info .wrapper .playlist-img {
+    min-width: 200px;
+    min-max: 200px;
+    minheight: 200px;
+  }
+}
+
+@media screen and (max-width: 523px) {
+  .playlist-main .playlist-info .wrapper .playlist-img {
+    min-width: 150px;
+    min-max: 150px;
+    minheight: 150px;
+  }
 }
 
 .playlist-main .playlist-info .wrapper .playlist-img img {
@@ -77,7 +201,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -94,7 +217,24 @@
   color: #fff;
   font-weight: bolder;
   font-style: italic;
-  font-size: 7rem;
+  font-size: 6rem;
+  line-height: 64px;
+}
+
+@media (max-width: 731px) {
+  .playlist-main .playlist-info .wrapper .playlist-main-info h1 {
+    font-size: 3rem;
+  }
+}
+
+.playlist-main .playlist-info .wrapper .playlist-main-info .short-font {
+  font-size: 4rem;
+}
+
+@media (max-width: 731px) {
+  .playlist-main .playlist-info .wrapper .playlist-main-info .short-font {
+    font-size: 3rem;
+  }
 }
 
 .playlist-main .Playlist_Song {

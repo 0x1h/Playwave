@@ -2,7 +2,10 @@ import { State as PlaylistType} from '../Components/Home/Playlists/createPlayLis
 
 export type State = {
     curr_playlist: PlaylistType,
-    showAddPlaylist: boolean
+    showAddPlaylist: boolean,
+    showOptions: boolean,
+    showDelete: boolean;
+    showEdit: boolean
 }
 
 type Action = {
@@ -24,6 +27,24 @@ export const playlistReducer = (state: State, action: Action): any => {
             return {
                 ...state,
                 curr_playlist: action.payload
+            }
+        }
+        case 'SHOW_OPTIONS': {
+            return {
+                ...state,
+                showOptions: action.payload
+            }
+        }
+        case 'SHOW_DELETE': {
+            return {
+                ...state,
+                showDelete: action.payload
+            }
+        }
+        case 'SHOW_EDIT': {
+            return {
+                ...state,
+                showEdit: action.payload
             }
         }
     }

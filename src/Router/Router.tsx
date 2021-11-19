@@ -1,67 +1,99 @@
-import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { State } from "../Components/Home/Playlists/createPlayList";
-import Landing from "../Components/Landing/Landing"
-import Setup from "../Components/Setup/Setup"
+import Landing from "../Components/Landing/Landing";
+import Setup from "../Components/Setup/Setup";
 import Home from "../Components/Home/Home";
 import ProfileNav from "../Components/Home/ProfileNav";
 import SearchComponent from "../Components/Search/SeachComponent";
-import CurrPlaylist from "../Components/Current Playlist/CurrPlaylist"
-import Player from "./Player"
+import CurrPlaylist from "../Components/Current Playlist/CurrPlaylist";
+import Player from "./Player";
 
 const Playwave = () => {
-    const [displayNav, setDisplayNav] = useState<boolean>(false)
-    const [selectedSong, setSelctedSong] = useState<string>('')
-    const [playlists, setPlaylists] = useState<State[]>([])
+  const [displayNav, setDisplayNav] = useState<boolean>(false);
+  const [selectedSong, setSelctedSong] = useState<string>("");
+  const [playlists, setPlaylists] = useState<State[]>([]); 
+  const [redirect, setRedirect] = useState(false)
 
-    const setData = (data: State[]): void => {
-        setPlaylists(data)
-    }
+  const setData = (data: State[]): void => {
+    setPlaylists(data);
+  };
+
+  const deletePlaylist = (playlist: string): void => {
+    const currPlaylist: State[] = JSON.parse(
+      localStorage.getItem("playlists")!
+    );
+    const removedData = currPlaylist.filter((e) => e.playlist_id !== playlist);
+    setPlaylists(removedData);
+    localStorage.setItem('playlists', JSON.stringify(removedData));
+    setRedirect(true)
+};
 
     useEffect(() => {
-        const logined: string | null = localStorage.getItem('isAuth');
-        logined && setDisplayNav(true)
-    }, [displayNav])
+        setTimeout(() => setRedirect(false), 10)
+    }, [redirect])
 
-    const setMusicState = (url: string) => {
-        if(url.trim() !== '') setSelctedSong(url)
-    }
+  useEffect(() => {
+    const logined: string | null = localStorage.getItem("isAuth");
+    logined && setDisplayNav(true);
+  }, [displayNav]);
 
-    return (
-        <Router>
-            {displayNav && <ProfileNav/>} 
-        <Switch>
-            <Route exact path="/">
-                {<Redirect to="/Welcome"/>}
-            </Route>
+  const setMusicState = (url: string) => {
+    if (url.trim() !== "") setSelctedSong(url);
+  };
 
-            {displayNav ? <Redirect exact from="/Welcome" to="/Home" /> : null}
+  return (
+    <Router>
+      {displayNav && <ProfileNav />}
+      <Switch>
+        <Route exact path="/">
+          {<Redirect to="/Welcome" />}
+        </Route> 
 
-            <Route path="/Welcome">
-                <Landing />
-            </Route>
+        {displayNav ? <Redirect exact from="/Welcome" to="/Home" /> : null}
 
-            <Route path="/callback">
-                {<Redirect to="/Setup" />}
-            </Route>
+        <Route path="/Welcome">
+          <Landing />
+        </Route>
 
-            <Route exact path="/Setup">
-                <Setup appearComponent={() => setDisplayNav(true)}/>
-            </Route>
+        <Route path="/callback">{<Redirect to="/Setup" />}</Route>
 
-            <Route path="/Playlist/:id" children={<CurrPlaylist setData={setData} newAdded={playlists}/>}></Route>
+        <Route exact path="/Setup">
+          <Setup appearComponent={() => setDisplayNav(true)} />
+        </Route>
 
-            <Route exact path="/Home" >
-                <Home setData={setData} playlists={playlists}/>
-            </Route>
+        <Route
+          path="/Playlist/:id"
+          children={
+            <CurrPlaylist
+              setData={setData}
+              newAdded={playlists}
+              deleteAction={deletePlaylist}
+              redirect={redirect}
+            />
+          }
+        ></Route>
 
-            <Route path="/Search">
-                <SearchComponent setSelectedState={setMusicState} setData={setData} newAdded={playlists}/>
-            </Route>
-        </Switch>
-        {displayNav ? <Player curr_song={selectedSong}/> : null}
+        <Route exact path="/Home">
+          <Home setData={setData} playlists={playlists} />
+        </Route>
+
+        <Route path="/Search">
+          <SearchComponent
+            setSelectedState={setMusicState}
+            setData={setData}
+            newAdded={playlists}
+          />
+        </Route>
+      </Switch>
+      {displayNav ? <Player curr_song={selectedSong} /> : null}
     </Router>
-    )
-}
- 
-export default Playwave 
+  );
+};
+
+export default Playwave;

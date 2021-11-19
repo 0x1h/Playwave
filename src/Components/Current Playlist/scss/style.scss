@@ -24,29 +24,111 @@
     background: #383838;
     border-radius: 20px;
     border: 3px solid #0bff9f;
-    padding: 0 10rem;
+    padding-left: 10px;
+    position: relative;
+    .options{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;     
+      width: 60px;
+      height: 15px;
+      background: #1f1f1f;
+      right: 0;
+      top: 0;
+      border-radius: 40px;
+      transform: translate(-20px, 10px);
+      cursor: pointer;
+      padding: 0 13px;
+      .dot{
+        width: 5px;
+        height: 5px;
+        background: #FFF;
+        border-radius: 50%; 
+      }
+    }
+    .options-box{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;  
+      width: 150px;
+      height: 90px;
+      right: 0;
+      top: 0;
+      background: #1f1f1f;
+      border-radius: 15px 0 15px 15px;
+      transform: translate(-40px, 15px);
+      box-shadow: 2px 5px 10px;
+      & * {
+        display: flex;
+        align-items: center;
+        flex-grow: 1; 
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      .delete-btn{
+        color: #ff5353;
+        transition: 0.3s;
+        border-radius: 10px;
+        width: 100%;
+        padding-left: 40px;
+        &:hover{
+          background: #ff5353;
+          color: #000;
+        }
+        &:hover .fa-trash-alt{
+          color: #000;
+        }
+      }
+      .edit-btn{
+        width: 100%;
+        color: #FFF;
+        transition: 0.3s;
+        border-radius: 10px;
+        padding-left: 50px;
+
+        &:hover{
+          background: #585858;
+        }
+      }
+    }
+    @media screen and (max-width: 1410px) {
+     padding: 0 2rem; 
+    }
+    @media screen and (max-width: 731px) {
+      padding: 0 1rem;
+     }
     .wrapper {
       display: flex;
       align-items: center;
-      height: 200px;
-      width: 200px;
       width: 100%;
       height: 100%;
-      //! Needs to be fixed img shrinking issue
+      @media screen and (max-width: 523px) {
+        
+      }
       .playlist-img {
-        height: 250px;
-        width: 250px;
-        border-radius: 20px;
         overflow: hidden;
-        object-fit: scale-down;
-        object-position: 0 0; /*top left position (optional)*/
+        min-width: 250px;
+        max-width: 250px; 
+        min-height: 250px;
+        border-radius: 20px;
+        @media screen and(max-width: 731px) {
+          min-width: 200px;
+          min-max: 200px;
+          minheight: 200px;
+        }
+        @media screen and (max-width: 523px) {
+          min-width: 150px;
+          min-max: 150px;
+          minheight: 150px;
+        }
         img {
           width: 100%;
         }
       }
       .playlist-main-info {
         display: flex;
-        position: relative;
         flex-direction: column;
         justify-content: space-between;
         padding-bottom: 20px;
@@ -56,7 +138,17 @@
           color: #fff;
           font-weight: bolder;
           font-style: italic;
-          font-size: 7rem;
+          font-size: 6rem;
+          line-height: 64px;
+          @media (max-width: 731px) {
+            font-size: 3rem; 
+          }
+        }
+        .short-font{
+          font-size: 4rem;
+          @media (max-width: 731px) {
+            font-size: 3rem; 
+          }
         }
       }
     }

@@ -51,7 +51,7 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout, newAdded}) => {
         </div>
         <div className="playlists-box">
             {
-               playlist !== null ? playlist.map(e => {
+               playlist.length > 0 ? playlist.map(e => {
                 return <Playlists name={e.playlistName} imageUri={e.playlistUri} key={e.playlist_id} playlist_id={e.playlist_id}/>
               }) : <p style={{color: "#FFF"}}>There is no any playlist 😢</p> 
             }
