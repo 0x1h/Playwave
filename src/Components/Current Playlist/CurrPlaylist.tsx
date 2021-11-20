@@ -1,6 +1,7 @@
 import { Fragment, useReducer, useEffect, FC, useRef, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { playlistReducer, State } from "../../Hooks/CurrplaylistHook";
+import { UpdatedProps } from "./EditComponent";
 import {
   State as PlaylistType,
   defaultState,
@@ -25,6 +26,7 @@ interface CurrPlaListProps {
   newAdded: PlaylistType[];
   deleteAction: (playlist: string) => void;
   redirect: boolean;
+  updateState: (newData: UpdatedProps, id: string) => void
 }
 
 const CurrPlaylist: FC<CurrPlaListProps> = ({
@@ -32,12 +34,20 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   newAdded,
   deleteAction,
   redirect,
+  updateState
 }) => {
   const [state, dispatch] = useReducer(playlistReducer, defaultPlaylistState);
   const [shortFont, setShortFont] = useState<boolean>(false);
   const { id } = useParams<{ id: string }>();
   const playlistNameRef = useRef<HTMLHeadingElement>(null);
   let history = useHistory();
+
+  const triggerChange = () => {
+    const find_playlist: PlaylistType = JSON.parse(
+      localStorage.getItem("playlists")!
+    ).find((e: any) => e.playlist_id === id);
+    dispatch({ type: "SET_PLAYLIST", payload: find_playlist });
+  }
 
   useEffect(() => {
     if (redirect) {
@@ -50,24 +60,28 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   };
 
   useEffect(() => {
+    triggerChange()
+    dispatch({ type: "SHOW_EDIT", payload: false })
+  }, [updateState])
+
+  useEffect(() => {
     if (playlistNameRef.current?.innerHTML.length! > 10) setShortFont(true);
     else setShortFont(false);
   }, [state.curr_playlist.playlistName]);
 
   useEffect(() => {
-    const find_playlist: PlaylistType = JSON.parse(
-      localStorage.getItem("playlists")!
-    ).find((e: any) => e.playlist_id === id);
-    dispatch({ type: "SET_PLAYLIST", payload: find_playlist });
+    triggerChange()
   }, [id]);
 
   return (
     <Fragment>
       {state.showEdit ? (
         <EditComponent
+        id={id}
           prevData={state.curr_playlist}
           closeEdit={() =>
             dispatch({ type: "SHOW_EDIT", payload: false })}
+            updateState={updateState}
         />
       ) : null}
       {state.showDelete ? (

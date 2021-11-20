@@ -5,6 +5,7 @@ import {
   Redirect
 } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { UpdatedProps } from "../Components/Current Playlist/EditComponent";
 import { State } from "../Components/Home/Playlists/createPlayList";
 import Landing from "../Components/Landing/Landing";
 import Setup from "../Components/Setup/Setup";
@@ -33,6 +34,19 @@ const Playwave = () => {
     localStorage.setItem('playlists', JSON.stringify(removedData));
     setRedirect(true)
 };
+
+  const updatePlaylist = (newData: UpdatedProps, id: string) => {
+    const currPlaylist: State[] = JSON.parse(
+      localStorage.getItem("playlists")!
+    );
+
+    const findIndex = currPlaylist.findIndex(each => each.playlist_id === id)
+    currPlaylist[findIndex].playlistName = newData.newTitle
+    currPlaylist[findIndex].playlistUri = newData.newImage
+
+    setPlaylists(currPlaylist)
+    localStorage.setItem("playlists", JSON.stringify(currPlaylist))
+  }
 
     useEffect(() => {
         setTimeout(() => setRedirect(false), 10)
@@ -75,6 +89,7 @@ const Playwave = () => {
               newAdded={playlists}
               deleteAction={deletePlaylist}
               redirect={redirect}
+              updateState={updatePlaylist}
             />
           }
         ></Route>

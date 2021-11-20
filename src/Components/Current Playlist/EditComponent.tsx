@@ -3,13 +3,20 @@ import { State } from '../Home/Playlists/createPlayList'
 import axios from 'axios'
 import "./scss/edit-style.css"
 
+
+export interface UpdatedProps {
+    newImage: string,
+    newTitle: string
+}
 interface EditProps {
     prevData: State,
     closeEdit: () => void
+    updateState: (newData: UpdatedProps, id: string) => void
+    id: string
 }
 
-const EditComponent: FC<EditProps> = ({prevData, closeEdit}) => {
-    const [update, setUpdate] = useState({
+const EditComponent: FC<EditProps> = ({prevData, closeEdit, updateState, id}) => {
+    const [update, setUpdate] = useState<UpdatedProps>({
         newImage: "",
         newTitle: ""
     })
@@ -21,11 +28,6 @@ const EditComponent: FC<EditProps> = ({prevData, closeEdit}) => {
     const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const name: string = e.target.name
         const value: string = e.target.value 
-
-        //Todo: I will use that later
-        // axios.get(value)
-        // .then(() => console.log("yeahh it is photo"))
-        // .catch(() => {console.log("it is not a photo")})
 
         setUpdate({...update, [name]: value})
     }
@@ -50,7 +52,7 @@ const EditComponent: FC<EditProps> = ({prevData, closeEdit}) => {
                 </div>
             <div className="btn-container">
                 <button className="cancel" onClick={closeEdit}>Cancel</button>
-                <button className="save">Save</button>
+                <button className="save" onClick={() => updateState(update, id)}>Save</button>
             </div>
             </div>
         </div>
