@@ -35,7 +35,7 @@ const AddToPlaylist: FC<AddPlayListProps> = ({ songname, setFalse, song_data }) 
         //Grabbing index of selected Playlist
         let playListIndex = curr_playlist.findIndex((playlist: any) => playlist.playlist_id === id)
         //adding in selected chosen song with another songs
-        const updatePlayListSongs = [...curr_playlist[playListIndex].songs, song_data]
+        const updatePlayListSongs = [...curr_playlist[playListIndex].songs, {...song_data, id: new Date().getTime().toString()}]
         //updating playlist
         curr_playlist[playListIndex].songs = updatePlayListSongs
         //Saving playlist in localStorage

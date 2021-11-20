@@ -34,7 +34,6 @@ const SearchBar: React.FC<setComponentProps> = ({
   displayResultsTrue,
   displayResultsFalse,
   setLoaderFalse,
-  Work
 }) => {
   const [state, dispatch] = useReducer(searchreducer, searchDefault);
 
@@ -60,10 +59,7 @@ const SearchBar: React.FC<setComponentProps> = ({
         dispatch({
           type: "FOUND_SONGS",
           payload: { input: state.input, songs: filterResponse },
-        });
-        if(Work){
-
-        }
+        })
       })
       .catch((err) => console.log(err));
   };

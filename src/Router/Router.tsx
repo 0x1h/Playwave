@@ -20,6 +20,7 @@ const Playwave = () => {
   const [selectedSong, setSelctedSong] = useState<string>("");
   const [playlists, setPlaylists] = useState<State[]>([]); 
   const [redirect, setRedirect] = useState(false)
+  const [changed, setChanged] = useState(false)
 
   const setData = (data: State[]): void => {
     setPlaylists(data);
@@ -52,8 +53,23 @@ const Playwave = () => {
         setTimeout(() => setRedirect(false), 10)
     }, [redirect])
 
+    const deleteSong = (id: string, playlist_id: string) => {
+      const currPlaylist: State[] = JSON.parse(
+        localStorage.getItem("playlists")!
+      );
+
+      const findPlaylist = currPlaylist.findIndex(playlist => playlist.playlist_id === playlist_id)
+      const filteredSongs = currPlaylist[findPlaylist].songs?.filter(song => song.id !== id)
+
+      currPlaylist[findPlaylist].songs = filteredSongs
+        
+      localStorage.setItem('playlists', JSON.stringify(currPlaylist))
+      setChanged(true)
+      setTimeout(() => setChanged(false), 10)
+    }
+
   useEffect(() => {
-    const logined: string | null = localStorage.getItem("isAuth");
+    const logined: string | null = localStorage.getItem("isAuth"); 
     logined && setDisplayNav(true);
   }, [displayNav]);
 
@@ -85,6 +101,9 @@ const Playwave = () => {
           path="/Playlist/:id"
           children={
             <CurrPlaylist
+              changed={changed}
+              playSong={setMusicState}
+              deleteSong={deleteSong}
               setData={setData}
               newAdded={playlists}
               deleteAction={deletePlaylist}

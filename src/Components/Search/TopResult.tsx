@@ -6,6 +6,7 @@ export interface TopResultProp {
   name: string,
   image: string,
   song_url: string,
+  id?: string;
 }
 
 const TopResult: React.FC<{

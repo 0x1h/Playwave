@@ -1,6 +1,5 @@
 import { useState, useEffect, FC } from 'react'
 import { State } from '../Home/Playlists/createPlayList'
-import axios from 'axios'
 import "./scss/edit-style.css"
 
 

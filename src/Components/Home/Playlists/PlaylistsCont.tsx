@@ -6,6 +6,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import {State} from "./createPlayList"
 
+export const emptyImageSource = "https://louisville.edu/history/images/noimage.jpg/image"
+
 interface PlayListsProps {
     addPlayListLayout: () => void,
     newAdded: State[]
@@ -52,7 +54,7 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout, newAdded}) => {
         <div className="playlists-box">
             {
                playlist.length > 0 ? playlist.map(e => {
-                return <Playlists name={e.playlistName} imageUri={e.playlistUri} key={e.playlist_id} playlist_id={e.playlist_id}/>
+                return <Playlists name={e.playlistName} imageUri={e.playlistUri.trim() !== "" ? e.playlistUri : emptyImageSource} key={e.playlist_id} playlist_id={e.playlist_id}/>
               }) : <p style={{color: "#FFF"}}>There is no any playlist 😢</p> 
             }
         </div>

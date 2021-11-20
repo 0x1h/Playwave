@@ -12,6 +12,7 @@ export type State = {
     name: string;
     albumUri: string;
     artist: string;
+    id?: string
   }[];
 };
 

@@ -1,6 +1,7 @@
-import { Fragment, useReducer, useEffect, FC, useRef, useState } from "react";
+import { Fragment, useReducer, FC, useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { playlistReducer, State } from "../../Hooks/CurrplaylistHook";
+import { emptyImageSource } from "../Home/Playlists/PlaylistsCont";
 import { UpdatedProps } from "./EditComponent";
 import {
   State as PlaylistType,
@@ -26,7 +27,10 @@ interface CurrPlaListProps {
   newAdded: PlaylistType[];
   deleteAction: (playlist: string) => void;
   redirect: boolean;
-  updateState: (newData: UpdatedProps, id: string) => void
+  updateState: (newData: UpdatedProps, id: string) => void;
+  playSong: (url: string) => void;
+  deleteSong: (id: string, playlist_id: string) => void;
+  changed: boolean
 }
 
 const CurrPlaylist: FC<CurrPlaListProps> = ({
@@ -34,7 +38,10 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   newAdded,
   deleteAction,
   redirect,
-  updateState
+  updateState,
+  playSong,
+  deleteSong,
+  changed
 }) => {
   const [state, dispatch] = useReducer(playlistReducer, defaultPlaylistState);
   const [shortFont, setShortFont] = useState<boolean>(false);
@@ -47,7 +54,13 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
       localStorage.getItem("playlists")!
     ).find((e: any) => e.playlist_id === id);
     dispatch({ type: "SET_PLAYLIST", payload: find_playlist });
-  }
+  };
+
+  useEffect(() => {
+    if(changed){
+      triggerChange();
+    }
+  }, [changed])
 
   useEffect(() => {
     if (redirect) {
@@ -60,9 +73,9 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   };
 
   useEffect(() => {
-    triggerChange()
-    dispatch({ type: "SHOW_EDIT", payload: false })
-  }, [updateState])
+    triggerChange();
+    dispatch({ type: "SHOW_EDIT", payload: false });
+  }, [updateState]);
 
   useEffect(() => {
     if (playlistNameRef.current?.innerHTML.length! > 10) setShortFont(true);
@@ -70,18 +83,17 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   }, [state.curr_playlist.playlistName]);
 
   useEffect(() => {
-    triggerChange()
+    triggerChange();
   }, [id]);
 
   return (
     <Fragment>
       {state.showEdit ? (
         <EditComponent
-        id={id}
+          id={id}
           prevData={state.curr_playlist}
-          closeEdit={() =>
-            dispatch({ type: "SHOW_EDIT", payload: false })}
-            updateState={updateState}
+          closeEdit={() => dispatch({ type: "SHOW_EDIT", payload: false })}
+          updateState={updateState}
         />
       ) : null}
       {state.showDelete ? (
@@ -130,7 +142,14 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
             ) : null}
             <div className="wrapper">
               <div className="playlist-img">
-                <img src={state.curr_playlist.playlistUri} alt="playlist-img" />
+                <img
+                  src={
+                    state.curr_playlist.playlistUri.trim() !== ""
+                      ? state.curr_playlist.playlistUri
+                      : emptyImageSource
+                  }
+                  alt="playlist-img"
+                />
               </div>
               <div className="playlist-main-info">
                 <p style={{ color: "#1B1B1B" }}>Playlist</p>
@@ -141,7 +160,7 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
                   {state.curr_playlist.playlistName}
                 </h1>
                 <p style={{ color: "#0BFF9F", fontWeight: "bolder" }}>
-                  Musics in Total: {state.curr_playlist.songs.length}
+                  Songs • {state.curr_playlist.songs.length}
                 </p>
               </div>
             </div>
@@ -150,11 +169,15 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
             state.curr_playlist.songs.map((song: any, i: number) => {
               return (
                 <PlaylistSong
+                  playSong={playSong}
                   index={i + 1}
                   img_url={song.image}
                   song_name={song.name}
                   song_uri={song.song_url}
-                  key={song.song_url}
+                  id={song.id}
+                  deleteSong={deleteSong}
+                  key={song.id}
+                  playlist_id={id}
                 />
               );
             })

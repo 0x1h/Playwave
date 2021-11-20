@@ -4,11 +4,11 @@ import ImageBox from "./ImageBox";
 import { useHistory } from "react-router-dom";
 
 export type State = {
-  imgSrc: string | undefined;
+  imgSrc: string 
   name: string;
   surname: string;
   nickname: string;
-  bio: string | undefined
+  bio: string 
 }
 
 const formState: State = {
