@@ -16,6 +16,17 @@
   padding: 0 20px;
   width: 100%;
   height: 80px;
+  .home-button{
+    @include Center;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    background: $main-color;
+    border-radius: 50px;
+    .fa-home{
+      margin-right: 15px;
+    }
+  }
   .Redirect-Home {
     display: flex;
     align-items: center;

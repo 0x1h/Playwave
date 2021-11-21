@@ -1,0 +1,116 @@
+@import "../../Landing/scss/variables.scss";
+
+.profile {
+  width: 100%;
+  padding: 0 200px;
+  .profile-container {
+    @include Center;
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    height: 400px;
+    background: #3d3d3d;
+    border-radius: 30px;
+    padding: 20px 90px;
+    .options{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: 60px;
+      height: 15px;
+      right: 0;
+      top: 0;
+      transform: translate(-20px, 20px);
+      border-radius: 40px;
+      transition: 0.3s ease;
+      background: #1f1f1f;
+      padding: 0 15px;
+      cursor: pointer;
+      .dot{
+        width: 5px;
+        height: 5px;
+        background: #FFF;
+        border-radius:50%;
+      }
+      &:hover{
+        background: $main-color;
+        & .dot{
+          background: #000;
+        }
+      }
+    }
+    .wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      .img-container {
+        height: auto;
+        width: auto;
+        min-width: 200px;
+        border: 3px solid $main-color;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .main-information {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0 40px;
+        h1 {
+          font-size: 4rem;
+          color: #fff;
+          font-weight: bolder;
+          font-style: italic;
+        }
+        h3 {
+          font-weight: bolder;
+          font-style: italic;
+          transform: translateY(-20px);
+        }
+        .about-me {
+          color: $main-color;
+        }
+        .bio-area {
+          resize: none;
+          width: 100%;
+          border: 3px solid $main-color;
+          background: #1f1f1f;
+          color: #fff;
+          outline: none;
+          border-radius: 10px;
+          height: 150px;
+        }
+        .playlist-total {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 40px;
+          h4 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bolder;
+            font-style: italic;
+          }
+          .square {
+            @include Center;
+            height: 40px;
+            width: 40px;
+            background: $main-color;
+            border-radius: 5px;
+            font-weight: bolder;
+            font-style: italic;
+            font-size: 1.2em;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

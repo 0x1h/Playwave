@@ -1,0 +1,165 @@
+.profile {
+  width: 100%;
+  padding: 0 200px;
+}
+
+.profile .profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  height: 400px;
+  background: #3d3d3d;
+  border-radius: 30px;
+  padding: 20px 90px;
+}
+
+.profile .profile-container .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(-20px, 20px);
+          transform: translate(-20px, 20px);
+  border-radius: 40px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: #1f1f1f;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.profile .profile-container .options .dot {
+  width: 5px;
+  height: 5px;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+.profile .profile-container .options:hover {
+  background: #0BFF9F;
+}
+
+.profile .profile-container .options:hover .dot {
+  background: #000;
+}
+
+.profile .profile-container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profile .profile-container .wrapper .img-container {
+  height: auto;
+  width: auto;
+  min-width: 200px;
+  border: 3px solid #0BFF9F;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile .profile-container .wrapper .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.profile .profile-container .wrapper .main-information {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.profile .profile-container .wrapper .main-information h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.profile .profile-container .wrapper .main-information h3 {
+  font-weight: bolder;
+  font-style: italic;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.profile .profile-container .wrapper .main-information .about-me {
+  color: #0BFF9F;
+}
+
+.profile .profile-container .wrapper .main-information .bio-area {
+  resize: none;
+  width: 100%;
+  border: 3px solid #0BFF9F;
+  background: #1f1f1f;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  height: 150px;
+}
+
+.profile .profile-container .wrapper .main-information .playlist-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+}
+
+.profile .profile-container .wrapper .main-information .playlist-total h4 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.profile .profile-container .wrapper .main-information .playlist-total .square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  width: 40px;
+  background: #0BFF9F;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=style.css.map */

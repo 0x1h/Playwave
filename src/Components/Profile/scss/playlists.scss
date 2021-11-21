@@ -1,0 +1,42 @@
+@import "../../Landing/scss/variables.scss";
+
+.profile-playlists{
+    @include Center;
+    width: 100%;
+    min-height: 100px;
+    background: #3d3d3d;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px;
+    padding: 10px 20px;
+    p{
+        color: #FFF;
+    }
+    .playlist-box{
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        width: 100%;
+        height: 70px;
+        background: #1f1f1f;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        .playlist-img{
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius:5px;
+            img{
+                width: 100%;
+            }
+        }
+        p{
+            font-size: 1.2rem;
+            color: #FFF;
+        }
+        &:hover{
+            background: #1a1a1a;
+        }
+    }
+}
