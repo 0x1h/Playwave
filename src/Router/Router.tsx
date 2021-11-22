@@ -5,6 +5,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { TopResultProp } from "../Components/Search/TopResult";
 import { UpdatedProps } from "../Components/Current Playlist/EditComponent";
 import { State } from "../Components/Home/Playlists/createPlayList";
 import Landing from "../Components/Landing/Landing";
@@ -18,15 +19,15 @@ import Player from "./Player";
 
 const Playwave = () => {
   const [displayNav, setDisplayNav] = useState<boolean>(false);
-  const [selectedSong, setSelctedSong] = useState<string>("");
+  const [selectedSong, setSelctedSong] = useState<TopResultProp>({
+    name: '',
+    image: '',
+    song_url: '',
+  });
   const [playlists, setPlaylists] = useState<State[]>([]);
   const [redirect, setRedirect] = useState(false);
   const [changed, setChanged] = useState(false);
   const [showHome, setShowHome] = useState(false);
-
-  const listenURL = (pathname: string) => {
-    console.log("Current URL:", pathname);
-  };
 
   const setData = (data: State[]): void => {
     setPlaylists(data);
@@ -83,8 +84,8 @@ const Playwave = () => {
     logined && setDisplayNav(true);
   }, [displayNav]);
 
-  const setMusicState = (url: string) => {
-    if (url.trim() !== "") setSelctedSong(url);
+  const setMusicState = (url: TopResultProp) => {
+    if (url.song_url !== "") setSelctedSong({...url});
   };
 
   return (
@@ -128,6 +129,7 @@ const Playwave = () => {
             />
           }
         ></Route>
+)
 
         <Route path="/Profile">
           <Profile />
@@ -145,7 +147,7 @@ const Playwave = () => {
           />
         </Route>
       </Switch>
-      {displayNav ? <Player curr_song={selectedSong} /> : null}
+      {displayNav ? <Player curr_song={selectedSong} /> : null}  
     </Router>
   );
 };

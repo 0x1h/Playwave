@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { playlistReducer, State } from "../../Hooks/CurrplaylistHook";
 import { emptyImageSource } from "../Home/Playlists/PlaylistsCont";
 import { UpdatedProps } from "./EditComponent";
+import { TopResultProp } from "../Search/TopResult";
 import {
   State as PlaylistType,
   defaultState,
@@ -28,7 +29,7 @@ interface CurrPlaListProps {
   deleteAction: (playlist: string) => void;
   redirect: boolean;
   updateState: (newData: UpdatedProps, id: string) => void;
-  playSong: (url: string) => void;
+  playSong: (url: TopResultProp) => void;
   deleteSong: (id: string, playlist_id: string) => void;
   changed: boolean
 }

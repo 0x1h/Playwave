@@ -1,24 +1,31 @@
-import { FC, useRef, useEffect } from "react";
+import { FC } from "react";
 import "./scss/player.css"
+import ReactJkMusicPlayer from 'react-jinke-music-player'
+import 'react-jinke-music-player/assets/index.css'
+import { TopResultProp } from "../Components/Search/TopResult";
 
-const Player: FC<{ curr_song: string | undefined}> = ({curr_song}) => {
-  const audioRef = useRef<HTMLAudioElement>(null)
-
-    useEffect(() => {
-      // Making Paly Promise
-      if(curr_song?.trim() === '') return 
-
-        audioRef.current!.pause()
-        audioRef.current!.load()
-        audioRef.current!.play()
-
-    }, [curr_song])
+const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {
+    const audioStuff = [{ 
+      name: curr_song.name,
+      singer: '',
+      cover: curr_song.image,
+        musicSrc: () => {
+          return Promise.resolve(
+            curr_song.song_url!,
+          )
+        },
+    }]
 
   return (
     <div className="song-player">
-      <audio controls ref={audioRef} controlsList="nodownload noplaybackrate">
-        <source src={curr_song} type="audio/mp3"/>
-      </audio>
+      <ReactJkMusicPlayer 
+      showDownload={false}
+      showThemeSwitch={false}
+      glassBg={true}
+      audioLists={audioStuff}
+      defaultPosition={{right: 0,bottom: 0}}
+      quietUpdate={true}
+      />
     </div>
   );
 };

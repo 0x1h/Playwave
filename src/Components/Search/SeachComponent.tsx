@@ -11,7 +11,7 @@ import AddToPlaylist from "../Home/Suggestions/AddToPlaylist";
 import "./scss/search.css";
 
 interface SearchProps { 
-  setSelectedState: (url: string) => void, 
+  setSelectedState: (url: TopResultProp) => void, 
   setData: (data: State[]) => void, 
   newAdded: State[]
 }
@@ -44,7 +44,7 @@ const SeachComponent: FC<SearchProps> = ({
   };
 
   useEffect(() => {
-    setSelectedState(selectedSong.song_url);
+    setSelectedState(selectedSong);
   }, [selectedSong]);
 
   return (

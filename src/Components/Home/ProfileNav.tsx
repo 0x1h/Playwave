@@ -46,10 +46,7 @@ const ProfileNav: FC<{ showHome: boolean; changeStateFalse: () => void; changeSt
         {!showHome ? (
           <div
             className="Redirect-Profile"
-            onClick={() => {
-              history.push("/Profile");
-              changeStateTrue();
-            }}
+            onClick={() => history.push("/Profile")}
           >
             <div className="img-and-Profile">
               <div className="profile-image">
@@ -63,10 +60,7 @@ const ProfileNav: FC<{ showHome: boolean; changeStateFalse: () => void; changeSt
         ) : (
           <div
             className="home-button"
-            onClick={() => {
-              history.push("/Home");
-              changeStateFalse();
-            }}
+            onClick={() => history.push("/Home")}
           >
             <FontAwesomeIcon icon={faHome} />
             Home
