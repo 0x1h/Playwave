@@ -52,11 +52,11 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      position: absolute;  
+      position: absolute; 
+      top: 0;
+      right: 0; 
       width: 150px;
       height: 90px;
-      right: 0;
-      top: 0;
       background: #1f1f1f;
       border-radius: 15px 0 15px 15px;
       transform: translate(-40px, 15px);

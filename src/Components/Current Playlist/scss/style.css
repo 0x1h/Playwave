@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .playlist-main {
@@ -10,17 +10,17 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   overflow-y: auto;
   -webkit-box-shadow: inset 0 0 20px;
-          box-shadow: inset 0 0 20px;
+  box-shadow: inset 0 0 20px;
   border-radius: 10px;
   gap: 10px 0;
   overflow: hidden;
@@ -32,11 +32,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 300px;
   background: #383838;
@@ -51,11 +51,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   width: 60px;
   height: 15px;
@@ -64,7 +64,7 @@
   top: 0;
   border-radius: 40px;
   -webkit-transform: translate(-20px, 10px);
-          transform: translate(-20px, 10px);
+  transform: translate(-20px, 10px);
   cursor: pointer;
   padding: 0 13px;
 }
@@ -72,7 +72,7 @@
 .playlist-main .playlist-info .options .dot {
   width: 5px;
   height: 5px;
-  background: #FFF;
+  background: #fff;
   border-radius: 50%;
 }
 
@@ -81,23 +81,23 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: absolute;
+  top: 0;
+  right: 0;
   width: 150px;
   height: 90px;
-  right: 0;
-  top: 0;
   background: #1f1f1f;
   border-radius: 15px 0 15px 15px;
   -webkit-transform: translate(-40px, 15px);
-          transform: translate(-40px, 15px);
+  transform: translate(-40px, 15px);
   -webkit-box-shadow: 2px 5px 10px;
-          box-shadow: 2px 5px 10px;
+  box-shadow: 2px 5px 10px;
 }
 
 .playlist-main .playlist-info .options-box * {
@@ -105,14 +105,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   cursor: pointer;
 }
 
@@ -136,7 +136,7 @@
 
 .playlist-main .playlist-info .options-box .edit-btn {
   width: 100%;
-  color: #FFF;
+  color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   border-radius: 10px;
@@ -164,8 +164,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -204,11 +204,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-bottom: 20px;
   margin-left: 20px;
   height: 250px;
@@ -257,8 +257,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 0 10px;
   height: 100%;
   width: 100%;
@@ -270,14 +270,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   -ms-flex-preferred-size: 60px;
-      flex-basis: 60px;
+  flex-basis: 60px;
 }
 
 .playlist-main .Playlist_Song .song-main-info #index {
@@ -291,11 +291,11 @@
   background: #fff;
   display: none;
   -webkit-clip-path: polygon(0 0, 0% 100%, 70% 50%);
-          clip-path: polygon(0 0, 0% 100%, 70% 50%);
+  clip-path: polygon(0 0, 0% 100%, 70% 50%);
   -webkit-transform: translate(4px, -1px);
-          transform: translate(4px, -1px);
-  -webkit-transition: all .3s ease .15s;
-  transition: all .3s ease .15s;
+  transform: translate(4px, -1px);
+  -webkit-transition: all 0.3s ease 0.15s;
+  transition: all 0.3s ease 0.15s;
   opacity: 0;
 }
 
@@ -312,12 +312,12 @@
 .playlist-main .Playlist_Song .song-main-info #song-name {
   display: inherit;
   -webkit-box-align: inherit;
-      -ms-flex-align: inherit;
-          align-items: inherit;
+  -ms-flex-align: inherit;
+  align-items: inherit;
   height: 100%;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   overflow-wrap: break-word;
 }
 
@@ -339,13 +339,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-preferred-size: 60px;
-      flex-basis: 60px;
+  flex-basis: 60px;
   height: 100%;
 }
 
@@ -355,12 +355,12 @@
   display: flex;
   position: relative;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 0 7px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
   width: 40px;
   height: 10px;
@@ -375,20 +375,20 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   width: 150px;
   height: 70px;
   background: #1f1f1f;
   -webkit-transform: translate(-120px, -40px);
-          transform: translate(-120px, -40px);
+  transform: translate(-120px, -40px);
   border-radius: 10px 10px 0 10px;
   -webkit-box-shadow: 0 0 5px;
-          box-shadow: 0 0 5px;
+  box-shadow: 0 0 5px;
   padding: 10px 0;
 }
 
@@ -414,12 +414,12 @@
 .playlist-main .Playlist_Song .options .option-box .dot {
   width: 5px;
   height: 5px;
-  background: #FFF;
+  background: #fff;
   border-radius: 50%;
 }
 
 .playlist-main .Playlist_Song .options .option-box:hover {
-  background: #0BFF9F;
+  background: #0bff9f;
 }
 
 .playlist-main .Playlist_Song .options .option-box:hover .dot {

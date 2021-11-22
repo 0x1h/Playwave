@@ -6,20 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import "./scss/nav-style.css";
 
-interface UserProps {
-  imgSrc: string;
-}
 
 const ProfileNav: FC<{ showHome: boolean; changeStateFalse: () => void; changeStateTrue: () => void  }> = ({
   showHome,
   changeStateFalse,
   changeStateTrue
 }) => {
-  const [profileImg, setProfileImage] = useState<UserProps | null>();
+  const [profileImg, setProfileImage] = useState<{imgSrc: string} | null>(null);
   const location = useLocation()
 
   useEffect(() => {
-    if(location.pathname === "/Profile") changeStateTrue();
+    if(location.pathname === "/Profile" ||location.pathname === "/Profile-Edit") changeStateTrue();
     else changeStateFalse();
   }, [location])
 

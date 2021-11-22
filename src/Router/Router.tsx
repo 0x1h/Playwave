@@ -15,14 +15,15 @@ import ProfileNav from "../Components/Home/ProfileNav";
 import SearchComponent from "../Components/Search/SeachComponent";
 import CurrPlaylist from "../Components/Current Playlist/CurrPlaylist";
 import Profile from "../Components/Profile/Profile";
-import Player from "./Player";
+import Player from "../Components/Player/Player";
+import ProfileEdit from "../Components/Profile/Edit/ProfileEdit";
 
 const Playwave = () => {
   const [displayNav, setDisplayNav] = useState<boolean>(false);
   const [selectedSong, setSelctedSong] = useState<TopResultProp>({
-    name: '',
-    image: '',
-    song_url: '',
+    name: "",
+    image: "",
+    song_url: "",
   });
   const [playlists, setPlaylists] = useState<State[]>([]);
   const [redirect, setRedirect] = useState(false);
@@ -85,7 +86,7 @@ const Playwave = () => {
   }, [displayNav]);
 
   const setMusicState = (url: TopResultProp) => {
-    if (url.song_url !== "") setSelctedSong({...url});
+    if (url.song_url !== "") setSelctedSong({ ...url });
   };
 
   return (
@@ -101,19 +102,14 @@ const Playwave = () => {
         <Route exact path="/">
           {<Redirect to="/Welcome" />}
         </Route>
-
         {displayNav ? <Redirect exact from="/Welcome" to="/Home" /> : null}
-
         <Route path="/Welcome">
           <Landing />
         </Route>
-
         <Route path="/callback">{<Redirect to="/Setup" />}</Route>
-
         <Route exact path="/Setup">
           <Setup appearComponent={() => setDisplayNav(true)} />
         </Route>
-
         <Route
           path="/Playlist/:id"
           children={
@@ -129,16 +125,16 @@ const Playwave = () => {
             />
           }
         ></Route>
-)
-
+        )
         <Route path="/Profile">
           <Profile />
         </Route>
-
+        <Route  path="/Profile-Edit">
+          <ProfileEdit />
+        </Route>
         <Route exact path="/Home">
           <Home setData={setData} playlists={playlists} />
         </Route>
-
         <Route path="/Search">
           <SearchComponent
             setSelectedState={setMusicState}
@@ -147,7 +143,7 @@ const Playwave = () => {
           />
         </Route>
       </Switch>
-      {displayNav ? <Player curr_song={selectedSong} /> : null}  
+      {displayNav ? <Player curr_song={selectedSong} /> : null}   
     </Router>
   );
 };

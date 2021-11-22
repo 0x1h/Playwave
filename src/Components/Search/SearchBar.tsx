@@ -28,6 +28,8 @@ interface setComponentProps {
   Work: SearchReultsType['songs']
 }
 
+
+
 const SearchBar: React.FC<setComponentProps> = ({
   tranferResult,
   setLoaderTrue,

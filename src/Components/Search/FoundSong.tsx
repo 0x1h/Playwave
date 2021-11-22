@@ -61,7 +61,7 @@ const FoundSong: FC<FoundSongProps> = ({ results, setMusic, appearAdding }) => {
           <ResultComponent
           songData={{
             name: result.name,
-            image: result.small_image,
+            image: result.medium_image,
             song_url: result.track_Uri
           }}
           updateState={updateSong}

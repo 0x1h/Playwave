@@ -4,10 +4,16 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .more-options
+  .dot {
   width: 5px;
   height: 5px;
   background: #fff;
@@ -36,8 +42,8 @@
   overflow-x: hidden;
   height: 450px;
   place-items: center;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr) [4];
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px 0;
 }
 
@@ -46,15 +52,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 230px;
   height: 300px;
   border-radius: 16px;
@@ -91,8 +97,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 0 30px;
   position: absolute;
   right: 0;
@@ -101,44 +107,60 @@
   width: 75%;
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .play-btn {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .play-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 50%;
-  background: #0BFF9F;
+  background: #0bff9f;
   width: 50px;
   height: 50px;
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .play-btn .triangle {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .play-btn
+  .triangle {
   width: 20px;
   height: 20px;
   background: #000;
   -webkit-clip-path: polygon(0 0, 0% 100%, 70% 50%);
-          clip-path: polygon(0 0, 0% 100%, 70% 50%);
+  clip-path: polygon(0 0, 0% 100%, 70% 50%);
   border-radius: 4px;
   -webkit-transform: translateX(5px);
-          transform: translateX(5px);
+  transform: translateX(5px);
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .more-options {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .more-options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 45px;
   height: 17px;
   border-radius: 20px;
@@ -150,28 +172,40 @@
   cursor: pointer;
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot::before {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .more-options
+  .dot::before {
   content: "";
   position: absolute;
   display: inline-block;
   width: 5px;
   height: 5px;
-  background: #FFF;
+  background: #fff;
   border-radius: 50%;
   -webkit-transform: translateX(10px);
-          transform: translateX(10px);
+  transform: translateX(10px);
 }
 
-.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot::after {
+.suggestion-container
+  .suggested-content
+  .suggest
+  .options-container
+  .options
+  .more-options
+  .dot::after {
   content: "";
   position: absolute;
   display: inline-block;
   width: 5px;
   height: 5px;
-  background: #FFF;
+  background: #fff;
   border-radius: 50%;
   -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
+  transform: translateX(-10px);
 }
 
 .suggestion-container .suggested-content .suggest .Options-Box {
@@ -179,26 +213,26 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   width: 140px;
   height: 50px;
   background: #383838;
   -webkit-box-shadow: 0 0 5px;
-          box-shadow: 0 0 5px;
+  box-shadow: 0 0 5px;
   border-radius: 10px;
   -webkit-transform: translate(20px, -20px);
-          transform: translate(20px, -20px);
+  transform: translate(20px, -20px);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .suggestion-container .suggested-content .suggest .Options-Box p {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .suggestion-container .suggested-content .suggest .Options-Box.hidden {
@@ -219,14 +253,14 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #0BFF9F;
+  background-color: #0bff9f;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar-track {
   background-color: #151515;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=suggestions-style.css.map */

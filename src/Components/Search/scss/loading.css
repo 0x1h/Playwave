@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .Loading-screen {
@@ -10,11 +10,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -28,15 +28,16 @@
   margin: 20px auto;
   position: relative;
   background: currentColor;
-  color: #0BFF9F;
+  color: #0bff9f;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-animation: animloader 0.3s 0.3s linear infinite alternate;
-          animation: animloader 0.3s 0.3s linear infinite alternate;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
 }
 
-.Loading-screen .loader:before, .Loading-screen .loader:after {
-  content: '';
+.Loading-screen .loader:before,
+.Loading-screen .loader:after {
+  content: "";
   width: 8px;
   height: 40px;
   border-radius: 4px;
@@ -44,18 +45,18 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 20px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-animation: animloader 0.3s  0.45s  linear infinite alternate;
-          animation: animloader 0.3s  0.45s  linear infinite alternate;
+  box-sizing: border-box;
+  -webkit-animation: animloader 0.3s 0.45s linear infinite alternate;
+  animation: animloader 0.3s 0.45s linear infinite alternate;
 }
 
 .Loading-screen .loader::before {
   left: -20px;
   -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 @-webkit-keyframes animloader {

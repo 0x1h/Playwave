@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .createPlaylist {
@@ -11,14 +11,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
   z-index: 9;
 }
 
@@ -28,32 +30,32 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 300px;
   height: 100px;
   z-index: 10;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: #1f1f1f;
   -webkit-box-shadow: 0 0 5px;
-          box-shadow: 0 0 5px;
+  box-shadow: 0 0 5px;
   border-radius: 10px;
   padding: 0 20px;
 }
 
 .createPlaylist .image-input input {
   background: #1f1f1f;
-  border: 2px solid #0BFF9F;
+  border: 2px solid #0bff9f;
   outline: none;
   border-radius: 3px;
   color: #fff;
@@ -61,7 +63,7 @@
 }
 
 .createPlaylist .image-input button {
-  background: #0BFF9F;
+  background: #0bff9f;
   width: 100px;
   height: 30px;
   border-radius: 40px;
@@ -77,17 +79,17 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 450px;
   height: 600px;
   background: #383838;
   border-radius: 30px;
   -webkit-box-shadow: 0 0 10px;
-          box-shadow: 0 0 10px;
+  box-shadow: 0 0 10px;
   position: relative;
 }
 
@@ -108,16 +110,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 250px;
   height: 250px;
   background: #1f1f1f;
@@ -136,11 +138,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 200px;
   width: 100%;
   padding: 0 40px;
@@ -149,10 +151,10 @@
 .createPlaylist .createPlayList-container form input {
   width: 100%;
   background: #1f1f1f;
-  border: 3px solid #0BFF9F;
+  border: 3px solid #0bff9f;
   height: 40px;
   border-radius: 9px;
-  outline: 2px solid #0BFF9F;
+  outline: 2px solid #0bff9f;
   color: #fff;
 }
 
@@ -161,13 +163,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding: 0 50px;
   position: absolute;
   width: 100%;
@@ -184,7 +186,7 @@
 .createPlaylist .createPlayList-container .save-container button {
   width: 150px;
   height: 50px;
-  background: #0BFF9F;
+  background: #0bff9f;
   border: none;
   outline: none;
   border-radius: 40px;

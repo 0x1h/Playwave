@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .addPlaylist {
@@ -10,14 +10,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
   z-index: 9;
   height: 100%;
 }
@@ -28,7 +30,7 @@
   background: #383838;
   border-radius: 20px;
   -webkit-box-shadow: 0 0 15px;
-          box-shadow: 0 0 15px;
+  box-shadow: 0 0 15px;
 }
 
 .addPlaylist .add-playlist-container .song-name-container {
@@ -36,11 +38,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 50px;
   width: 100%;
 }
@@ -54,20 +56,20 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   position: relative;
   height: calc(100% - 70px);
   -webkit-box-shadow: inset 0 0 5px;
-          box-shadow: inset 0 0 5px;
+  box-shadow: inset 0 0 5px;
   padding: 0 20px;
 }
 
@@ -76,8 +78,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 80px;
   margin-top: 20px;
@@ -91,14 +93,23 @@
   background: #1d1d1d;
 }
 
-.addPlaylist .add-playlist-container .user-playlists-container .user-playlist .playlist-photo-container {
+.addPlaylist
+  .add-playlist-container
+  .user-playlists-container
+  .user-playlist
+  .playlist-photo-container {
   width: 60px;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.addPlaylist .add-playlist-container .user-playlists-container .user-playlist .playlist-photo-container img {
+.addPlaylist
+  .add-playlist-container
+  .user-playlists-container
+  .user-playlist
+  .playlist-photo-container
+  img {
   width: 100%;
 }
 

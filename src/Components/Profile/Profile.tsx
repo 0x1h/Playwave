@@ -1,10 +1,42 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FC, useRef } from "react";
 import { State } from "../Setup/Form";
+import { useHistory } from "react-router-dom"
 import { State as PlaylistProps } from "../Home/Playlists/createPlayList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import ProfilePlaylists from "./Profile-Playlists";
 import "./scss/style.css";
 
+interface EditPlaylistProps {
+  close: () => void,
+}
+
+const EditPlaylistBtn: FC<EditPlaylistProps> = ({close}) => {
+  const editBtnRef = useRef<HTMLDivElement>(null)
+  let history = useHistory()
+
+  const outSideClick = (e: any) => {
+    if (editBtnRef.current && !editBtnRef.current.contains(e.target)) {
+      close();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", outSideClick, true)
+    return () => document.removeEventListener("click", outSideClick)
+  })
+
+  return (
+    <div className="edit-btn" ref={editBtnRef}>
+      <button className="profile-edit" onClick={() => history.push("/Profile-Edit")}>
+        <FontAwesomeIcon icon={faEdit} style={{marginRight: "10px"}}/>
+        Edit</button>
+  </div>
+  )
+}
+
 const Profile = () => {
+  const [showOption, setShowOption] = useState<boolean>(false)
   const [profilePlaylists, setProfilePlaylists] = useState<PlaylistProps[]>([]);
   const [profileInfo, setProfileInfo] = useState<State>({
     imgSrc: "",
@@ -32,7 +64,8 @@ const Profile = () => {
     <>
       <div className="profile">
         <div className="profile-container">
-          <div className="options">
+          {showOption ? <EditPlaylistBtn close={() => setShowOption(false)}/> : null}
+          <div className="options" onClick={() => setShowOption(true)}>
             <span className="dot"></span>
             <span className="dot"></span>
             <span className="dot"></span>
@@ -49,7 +82,7 @@ const Profile = () => {
               {profileInfo.bio.trim() !== "" ? (
                 <>
                   <p className="about-me">About me</p>
-                  <textarea className="bio-area" readOnly={true} value={profileInfo.bio}/>
+                  <textarea className="bio-area" readOnly value={profileInfo.bio}/>
                 </>
               ) : null}
               <div className="playlist-total">

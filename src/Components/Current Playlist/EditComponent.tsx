@@ -32,7 +32,7 @@ const EditComponent: FC<EditProps> = ({prevData, closeEdit, updateState, id}) =>
     }
 
     return (
-        <div className="edit-component">
+        <div className="playlist-edit-component">
             <div className="edit-box">
                 <div className="main-options">
                     <div className="image-update">

@@ -1,83 +1,84 @@
 @import "../../Landing/scss/variables.scss";
 
-.edit-component{
-    @include Center;
-    position: absolute;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-    .edit-box{
+.playlist-edit-component {
+  @include Center;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+    left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  .edit-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 400px;
+    height: 450px;
+    background: #383838;
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+    .main-options {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      .image-update {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 10px;
+        height: inherit;
+        width: inherit;
         flex-direction: column;
-        max-width: 600px;
-        width: 400px;
-        height: 450px;
-        background: #383838;
-        transform: translateY(-50px);
-        border-radius: 20px;
-        box-shadow: 0 0 10px;
-        .main-options{
-            display: flex;
+        .image-url-input {
+          width: 100%;
+          input {
+            background: transparent;
+            border: 2px solid $main-color;
+            border-radius: 6px;
+            color: #fff;
+            outline: none;
             width: 100%;
-            height: 100%;
-            .image-update{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 40px 10px;
-                height: inherit;         
-                width: inherit;
-                flex-direction: column;
-                .image-url-input{
-                    width: 100%;
-                    input{
-                        background: transparent;
-                        border: 2px solid $main-color;
-                        border-radius: 6px;
-                        color: #FFF;
-                        outline: none;
-                        width: 100%;
-                        height: 40px;
-                        &:focus{
-                            background: #000;
-                        }
-                }
-                }
-                .img-box{
-                    overflow: hidden;
-                    width: 200px;
-                    height: 200px;
-                    border: 3px solid $main-color; 
-                    border-radius: 10px;
-                    img{
-                        width: 100%;
-                    }
-                }      
+            height: 40px;
+            &:focus {
+              background: #000;
             }
+          }
         }
-        .btn-container{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .img-box {
+          overflow: hidden;
+          width: 200px;
+          height: 200px;
+          border: 3px solid $main-color;
+          border-radius: 10px;
+          img {
             width: 100%;
-            height: 70px;
-            padding: 0 60px;
-            padding-bottom: 60px; 
-            button{
-                width: 100px;
-                height: 40px;
-                border-radius: 50px;
-                border: none;
-                background: $main-color;
-                font-weight: bolder;
-                cursor: pointer;
-                &:nth-child(1){
-                    background: #000;
-                    color: #FFF;
-                }
-            }
+          }
         }
+      }
     }
+    .btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 70px;
+      padding: 0 60px;
+      padding-bottom: 60px;
+      button {
+        width: 100px;
+        height: 40px;
+        border-radius: 50px;
+        border: none;
+        background: $main-color;
+        font-weight: bolder;
+        cursor: pointer;
+        &:nth-child(1) {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
 }

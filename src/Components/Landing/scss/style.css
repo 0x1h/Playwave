@@ -4,12 +4,12 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #1B1B1B;
+  background: #1b1b1b;
   min-height: 100vh;
   position: relative;
 }
@@ -29,8 +29,8 @@ nav .nav-stuff {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 nav .nav-stuff .main-components {
@@ -40,11 +40,11 @@ nav .nav-stuff .main-components {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 nav .nav-stuff .main-components .logo-box {
@@ -55,11 +55,11 @@ nav .nav-stuff .main-components .logo-box {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 nav .nav-stuff .main-components .logo-box img {
@@ -74,8 +74,8 @@ nav .nav-stuff .direct-links {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 nav .nav-stuff .direct-links a {
@@ -85,7 +85,7 @@ nav .nav-stuff .direct-links a {
 }
 
 nav .nav-stuff .direct-links a:hover {
-  color: #0BFF9F;
+  color: #0bff9f;
 }
 
 .getStarted {
@@ -104,11 +104,11 @@ nav .nav-stuff .direct-links a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .getStarted .Slogan h1 {
@@ -125,11 +125,11 @@ nav .nav-stuff .direct-links a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .getStarted .Authorize .authorize-button {
@@ -138,11 +138,11 @@ nav .nav-stuff .direct-links a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background: #0BFF9F;
+  justify-content: space-around;
+  background: #0bff9f;
   width: 280px;
   height: 100px;
   border-radius: 70px;
@@ -158,7 +158,7 @@ nav .nav-stuff .direct-links a:hover {
 }
 
 .getStarted .Authorize .authorize-button:hover {
-  border-color: #0BFF9F;
+  border-color: #0bff9f;
   border-width: 5px;
 }
 
@@ -170,11 +170,11 @@ nav .nav-stuff .direct-links a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -195,12 +195,12 @@ a {
 }
 
 ::-moz-selection {
-  background: #0BFF9F;
+  background: #0bff9f;
   color: #000;
 }
 
 ::selection {
-  background: #0BFF9F;
+  background: #0bff9f;
   color: #000;
 }
 /*# sourceMappingURL=style.css.map */

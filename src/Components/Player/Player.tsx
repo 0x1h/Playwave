@@ -1,10 +1,10 @@
-import { FC } from "react";
-import "./scss/player.css"
 import ReactJkMusicPlayer from 'react-jinke-music-player'
+import { FC } from "react";
+import { TopResultProp } from "../Search/TopResult";
 import 'react-jinke-music-player/assets/index.css'
-import { TopResultProp } from "../Components/Search/TopResult";
+import "./scss/player.css"
 
-const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {
+const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {  
     const audioStuff = [{ 
       name: curr_song.name,
       singer: '',
@@ -22,9 +22,10 @@ const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {
       showDownload={false}
       showThemeSwitch={false}
       glassBg={true}
-      audioLists={audioStuff}
+      audioLists={audioStuff[0].name === '' ? [] : audioStuff}
       defaultPosition={{right: 0,bottom: 0}}
       quietUpdate={true}
+      showReload={false}
       />
     </div>
   );

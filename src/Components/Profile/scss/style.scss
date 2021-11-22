@@ -1,5 +1,11 @@
 @import "../../Landing/scss/variables.scss";
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .profile {
   width: 100%;
   padding: 0 200px;
@@ -12,6 +18,31 @@
     background: #3d3d3d;
     border-radius: 30px;
     padding: 20px 90px;
+    .edit-btn{
+      position: absolute;
+      height: 70px;
+      width: 150px;
+      right: 0;
+      top: 0;
+      border-radius: 5px;
+      transform: translate(-45px, 30px);
+      z-index: 10;
+      background: #2e2e2e; 
+      padding: 10px 5px;
+      .profile-edit{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background: #3d3d3d;
+        color: #FFF;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: none;
+        &:hover{
+          background: #616060;
+        }
+     }
+    }
     .options{
       display: flex;
       justify-content: space-between;
