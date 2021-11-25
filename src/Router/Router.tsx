@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { TopResultProp } from "../Components/Search/TopResult"
 import { UpdatedProps } from "../Components/Current Playlist/EditComponent"
 import { State } from "../Components/Home/Playlists/createPlayList"
+import About from "../Components/Landing/Others/About"
 import Landing from "../Components/Landing/Landing"
 import Setup from "../Components/Setup/Setup"
 import Home from "../Components/Home/Home"
@@ -97,6 +98,9 @@ const Playwave = () => {
         <Route path="/Welcome">
           <Landing />
         </Route>
+          <Route path="/About">
+            <About />
+          </Route>
         <Route path="/callback">{<Redirect to="/Setup" />}</Route>
         <Route exact path="/Setup">
           <Setup appearComponent={() => setDisplayNav(true)} />
