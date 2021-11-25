@@ -1,4 +1,6 @@
 import { useHistory } from "react-router-dom"
+import Waves from "../../Assets/Theme/Landing-wave.svg"
+
 
 const GetStarted = () => {
     let history = useHistory()
@@ -7,7 +9,7 @@ const GetStarted = () => {
         <div className="getStarted">
             <div className="Slogan">
                 <h1>
-                    Explore <br></br> Musics
+                    Explore <br></br> Musics 
                 </h1>
             </div>
             <div className="Authorize">
@@ -15,6 +17,7 @@ const GetStarted = () => {
                     <p>Sign up</p>
                 </div>
             </div>
+            <img src={Waves} alt="" className="Waves"/>
         </div>
     )
 }

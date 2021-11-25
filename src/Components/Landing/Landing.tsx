@@ -8,7 +8,6 @@ import "./scss/style.css"
 function Landing() {
     return (
         <React.Fragment>
-            <img src={Waves} alt="" className="Waves"/>
             <Nav />
             <GetStarted />
         </React.Fragment>
