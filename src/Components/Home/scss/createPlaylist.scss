@@ -1,0 +1,130 @@
+@import "../../Landing/scss/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.createPlaylist {
+  position: absolute;
+  @include Center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 9;
+  .image-input {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;;
+    width: 300px;
+    height: 100px;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1f1f1f;
+    box-shadow: 0 0 5px;
+    border-radius: 10px;
+    padding: 0 20px;;
+    input{
+        background: #1f1f1f;
+        border: 2px solid $main-color;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        width: 100%;
+    }
+    button{
+        background: $main-color;
+        width: 100px;
+        height: 30px;
+        border-radius: 40px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+  }
+  .createPlayList-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 600px;
+    background: #383838;
+    border-radius: 30px;
+    box-shadow: 0 0 10px;
+    position: relative;
+    .text-bar {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      h3 {
+        font-weight: 600;
+        font-style: italic;
+        font-size: 2rem;
+      }
+    }
+    .circle {
+      @include Center;
+      margin-top: 20px;
+      flex-direction: column;
+      width: 250px;
+      height: 250px;
+      background: #1f1f1f;
+      border-radius: 50%;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      img{
+          width: 100%;
+      }
+    }
+    form {
+      @include Center;
+      height: 200px;
+      width: 100%;
+      padding: 0 40px;
+      input {
+        width: 100%;
+        background: #1f1f1f;
+        border: 3px solid $main-color;
+        height: 40px;
+        border-radius: 9px;
+        outline: 2px solid $main-color;
+        color: #fff;
+      }
+    }
+    .save-container {
+      @include Center;
+      justify-content: space-around;
+      padding: 0 50px;
+      position: absolute;
+      width: 100%;
+      height: 80px;
+      bottom: 0;
+      left: 0;
+      button:nth-child(1) {
+        background: #000;
+        color: #fff;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+        background: $main-color;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 1.1em;
+      }
+    }
+  }
+}

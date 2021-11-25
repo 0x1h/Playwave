@@ -1,0 +1,103 @@
+body {
+  overflow-x: hidden;
+}
+
+@mixin Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-menu {
+  @include Center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  transform: translateX(100%);
+  padding: 70px 20px;
+  transition: 0.5s;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    .profile-button {
+      @include Center;
+      width: 100%;
+      height: 60px;
+      background: #0bff9f;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .menu-playlist {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1.4rem;
+      background: #000;
+      width: 100%;
+      border-radius: 10px;
+      height: 100%;
+      padding: 0 10px;
+      p {
+        color: #fff;
+      }
+      .playlist-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+        gap: 10px 0;
+        .playlist-box {
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+          width: 100%;
+          height: 70px;
+          background: transparent;
+          transition: 0.3s ease;
+          cursor: pointer;
+          border-radius: 10px;
+          &:hover{
+            background: #414141;
+          }
+          .playlist-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+          .playlist-name{
+            font-size: 1rem;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  &.slide {
+    transform: none;
+  }
+}
+
+.no-playlist{
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: normal;
+}

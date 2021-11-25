@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.home-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+}
+
+.home-container .playlist-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 400px;
+  height: 100%;
+  background: #383838;
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1112px) {
+  .home-container .playlist-container {
+    display: none;
+  }
+}
+
+.home-container .playlist-container .wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.home-container .playlist-container .wrapper .playList-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 50px;
+  background: #0BFF9F;
+  color: #000;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.home-container .playlist-container .wrapper .playList-btn:hover {
+  background: #57ffbc;
+}
+
+.home-container .playlist-container .wrapper .playList-btn .btn-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container .playlist-container .wrapper .playList-btn .btn-center p {
+  font-weight: 600;
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.home-container .playlist-container .wrapper .create-playlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.home-container .playlist-container .wrapper .create-playlist h2 {
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+}
+
+.home-container .playlist-container .wrapper .create-playlist .playlist-create-btn {
+  width: 150px;
+  height: 100%;
+  background: #0BFF9F;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.home-container .playlist-container .wrapper .create-playlist .playlist-create-btn:hover {
+  background: #57ffbc;
+}
+
+.home-container .playlist-container .playlists-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  height: 380px;
+  overflow-y: auto;
+  -webkit-box-shadow: inset 0 0 3px;
+          box-shadow: inset 0 0 3px;
+  border-radius: 10px;
+  padding: 0 5px;
+  padding-top: 10px;
+}
+
+.home-container .playlist-container .playlists-box .playlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+  padding-left: 20px;
+  width: 100%;
+  background: #1b1b1b;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.home-container .playlist-container .playlists-box .playlist:hover {
+  background-color: #1f1f1f;
+}
+
+.home-container .playlist-container .playlists-box .playlist .main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container .playlist-container .playlists-box .playlist .main-info .playlist-albumUri {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home-container .playlist-container .playlists-box .playlist .main-info .playlist-albumUri img {
+  width: 100%;
+  height: 100%;
+}
+
+.home-container .playlist-container .playlists-box .playlist .main-info p {
+  margin-left: 10px;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0BFF9F;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #151515;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=home-style.css.map */

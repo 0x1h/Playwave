@@ -1,0 +1,64 @@
+@import "../../Landing/scss/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.addPlaylist {
+  @include Center;
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 9;
+  height: 100%;
+  .add-playlist-container {
+    height: 600px;
+    width: 500px;
+    background: #383838;
+    border-radius: 20px;
+    box-shadow: 0 0 15px;
+    .song-name-container {
+      @include Center;
+      height: 50px;
+      width: 100%;
+      p {color: #fff}
+    }
+    .user-playlists-container {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      height: calc(100% - 70px);
+      box-shadow: inset 0 0 5px;
+      padding: 0 20px;
+      .user-playlist {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        margin-top: 20px;
+        background: #1f1f1f;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        &:hover {background: #1d1d1d}
+        .playlist-photo-container {
+          width: 60px;
+          height: 100%;
+          border-radius: 10px;
+          overflow: hidden;
+          img {width: 100%;}
+        }
+      }
+    }
+  }
+  &.hidden {display: none;}
+}

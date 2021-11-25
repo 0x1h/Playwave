@@ -1,0 +1,156 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: $bg-color;
+  min-height: 100vh;
+  position: relative;
+}
+// Navbar
+nav {
+  padding-right: 20px;
+  width: 100%;
+  height: 70px;
+  position: relative;
+  @media screen and (max-width: 384px){
+    padding-right: 0;
+  }
+  .nav-stuff {
+    max-width: 900px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    .Name{
+      @media screen and (max-width: 384px){
+        display: none;
+      }
+    }
+    .main-components {
+      height: 100%;
+      width: 250px;
+      @media screen and (max-width: 384px){
+        width: auto;
+      }
+      @include Center;
+      .logo-box {
+        width: 70px;
+        height: 100%;
+        position: relative;
+        @include Center;
+        img {
+          width: 100%;
+          position: absolute;
+        }
+      }
+    }
+    .direct-links {
+      min-width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      a {
+        margin: 0 20px;
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+.getStarted {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  @media screen and (max-width: 1163px){
+    flex-direction: column;
+    @include Center;
+  }
+  .Slogan {
+    width: 50%;
+    min-height: inherit;
+    @include Center;
+    h1 {
+      color: #ffffff;
+      font-weight: 900;
+      font-style: italic;
+      font-family: "Poppins", sans-serif;
+      font-size: 8rem;
+      @media screen and (max-width: 1163px){
+        font-size: 4rem;
+      }
+    }
+  }
+  .Authorize{
+      width: 50%;
+      @include Center;
+      .authorize-button{
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          background: $main-color;
+          width: 280px;
+          height: 100px;
+          border-radius: 70px;
+          margin-right: 20px;;
+          color: #000;
+          position: relative;
+          cursor: pointer;
+          border: 3px solid black;
+          font-size: 1.1em;
+          font-weight: 900;
+          transition: 0.5s ease;
+          @media screen and (max-width: 1163px){
+            height: 60px;
+          }
+          &:hover{
+              border-color: $main-color;
+              border-width: 5px;
+          }
+          .spotify-logo{
+              width: 70px;
+              height: 100%;
+              border: 1px solid blue;
+              @include Center;
+              position: relative;
+              img{
+                  width: 100%;
+              }
+          }
+      }
+  }
+}
+.Waves{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+// Non-Special
+::-moz-selection {
+  background: $main-color;
+  color: #000;
+}
+
+::selection {
+  background: $main-color;
+  color: #000;
+}

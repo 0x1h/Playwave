@@ -1,0 +1,296 @@
+@import "../../Landing/scss/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.playlist-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: inset 0 0 20px;
+  border-radius: 10px;
+  gap: 10px 0;
+  overflow: hidden;
+  overflow-y: auto;
+  .playlist-info {
+    @include Center;
+    width: 100%;
+    min-height: 300px;
+    background: #383838;
+    border-radius: 20px;
+    border: 3px solid #0bff9f;
+    padding-left: 10px;
+    position: relative;
+    overflow: hidden;
+    @media screen and (max-width: 523px) {
+      padding-left: 0;
+    }
+    .blurredBg{
+      position: absolute;
+      filter: blur(8px);
+    -webkit-filter: blur(18px);
+      width: 100%;
+    }
+    .options{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;     
+      width: 60px;
+      z-index: 9;
+      height: 15px;
+      background: #1f1f1f;
+      right: 0;
+      top: 0;
+      border-radius: 40px;
+      transform: translate(-20px, 10px);
+      cursor: pointer;
+      padding: 0 13px;
+      .dot{
+        width: 5px;
+        height: 5px;
+        background: #FFF;
+        border-radius: 50%; 
+      }
+    }
+    .options-box{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute; 
+      top: 0;
+      right: 0; 
+      width: 150px;
+      height: 90px;
+      background: #1f1f1f;
+      border-radius: 15px 0 15px 15px;
+      transform: translate(-40px, 15px);
+      box-shadow: 2px 5px 10px;
+      z-index: 9;
+      & * {
+        display: flex;
+        align-items: center;
+        flex-grow: 1; 
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 9;
+      }
+      .delete-btn{
+        color: #ff5353;
+        transition: 0.3s;
+        border-radius: 10px;
+        width: 100%;
+        padding-left: 40px;
+        &:hover{
+          background: #ff5353;
+          color: #000;
+        }
+        &:hover .fa-trash-alt{
+          color: #000;
+        }
+      }
+      .edit-btn{
+        width: 100%;
+        color: #FFF;
+        transition: 0.3s;
+        border-radius: 10px;
+        padding-left: 50px;
+        &:hover{
+          background: #585858;
+        }
+      }
+    }
+    @media screen and (max-width: 1410px) {
+     padding: 0 2rem; 
+    }
+    @media screen and (max-width: 731px) {
+      padding: 0 1rem;
+     }
+    .wrapper {
+      display: flex;
+      align-items: center;
+        z-index: 2;
+        width: 100%;
+      height: 100%;
+      @media screen and (max-width: 523px) {
+        flex-direction: column;
+      }
+      .playlist-img {
+        overflow: hidden;
+        min-width: 250px;
+        max-width: 250px; 
+        min-height: 250px;
+        border-radius: 20px;
+        z-index: 2;
+        @media screen and(max-width: 731px) {
+          min-width: 200px;
+          min-max: 200px;
+          minheight: 200px;
+        }
+        @media screen and (max-width: 523px) {
+          min-width: 150px;
+          min-max: 150px;
+          minheight: 150px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      .playlist-main-info {
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        margin-left: 20px;
+        min-height: 150px;
+        @media screen and (max-width: 523px) {
+          text-align: center;
+          margin-left: 0;
+        }
+        h1 {
+          color: #fff;
+          font-weight: bolder;
+          font-style: italic;
+          font-size: 6rem;
+          line-height: 64px;
+          -webkit-text-stroke: .6px black;
+          @media (max-width: 731px) {
+            font-size: 3rem; 
+          }
+        }
+        .short-font{
+          font-size: 4rem;
+          @media (max-width: 731px) {
+            font-size: 3rem; 
+          }
+        }
+      }
+    }
+  }
+  .Playlist_Song {
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 60px;
+    background: transparent;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    .song-main-info {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+      height: 100%;
+      width: 100%;
+      #index,
+      #img-box {
+        @include Center;
+        height: 100%;
+        flex-basis: 60px;
+      }
+      #index{
+          height: calc(100% - 10px);
+          border-right: 1px solid #696969;
+      }
+      #index .triangle {
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        display: none;
+        clip-path: polygon(0 0, 0% 100%, 70% 50%);
+        transform: translate(4px, -1px);
+        opacity: 0;
+      }
+      #img-box {
+        position: relative;
+        border-radius: 9px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
+      }
+      #song-name {
+        display: inherit;
+        align-items: inherit;
+        height: 100%;
+        flex-grow: 1;
+        overflow-wrap: break-word;
+      }
+    }
+    &:hover {
+      background: #3d3d3d;
+    }
+    &:hover > .song-main-info #index p {
+      display: none;
+    }
+    &:hover > .song-main-info #index .triangle {
+      display: block;
+    opacity: 1;
+    }
+    .options {
+      @include Center;
+      flex-basis: 60px;
+      
+      height: 100%;
+      .option-box{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        padding: 0 7px;
+        align-items: center;
+        cursor: pointer;
+        width: 40px;
+        height: 10px;
+        background: #1f1f1f; 
+        transition: 0.2s;
+        border-radius: 40px;
+        .song-options{
+          @include Center;
+          position: absolute;
+          width: 150px;
+          height: 70px;
+          background: #1f1f1f;
+          transform: translate(-120px, -40px);
+          border-radius: 10px 10px 0 10px;
+          box-shadow: 0 0 5px;
+          padding: 10px 0;
+          .delete-btn{
+            width: 100%;
+            height: 100%;
+            font-weight: 600;
+            border-radius: 6px;
+            color: #ff5353;
+            font-size: 1.1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover{
+              color: #383838;
+              background: #ff5353;
+            }
+          }
+        }
+         .dot{
+          width: 5px;
+          height: 5px;
+          background: #FFF;
+          border-radius: 50%;
+        }
+        &:hover{
+          background: $main-color;
+          & .dot{
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+}

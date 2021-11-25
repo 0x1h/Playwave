@@ -1,0 +1,290 @@
+.profile-edit-component {
+  width: 100%;
+}
+
+.profile-edit-component .edit-component {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  background: #1f1f1f;
+  min-height: 500px;
+  width: 100%;
+  z-index: 9;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.profile-edit-component .edit-component .profile-picture {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+}
+
+.profile-edit-component .edit-component .profile-picture .profile-img {
+  width: auto;
+  height: auto;
+  min-width: 400px;
+  min-height: 400px;
+  border: 4px solid #0BFF9F;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component .profile-picture .profile-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.profile-edit-component .edit-component .profile-picture .profile-img img {
+  width: 100%;
+}
+
+.profile-edit-component .edit-component .profile-picture button {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  background: #000;
+  margin-top: 50px;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+}
+
+.profile-edit-component .edit-component .profile-info {
+  min-width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component .profile-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.profile-edit-component .edit-component .profile-info .nickname-input {
+  font-size: min(max(3rem, 7vw), 7rem);
+  width: 100%;
+  border: none;
+  background: transparent;
+  height: 150px;
+  font-style: italic;
+  font-weight: 600;
+  outline: none;
+  color: #FFF;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component .profile-info .nickname-input {
+    text-align: center;
+  }
+}
+
+.profile-edit-component .edit-component .profile-info h3 {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  font-weight: 600;
+  font-style: italic;
+  color: #6d6d6d;
+}
+
+.profile-edit-component .edit-component .profile-info h2 {
+  color: #0BFF9F;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.profile-edit-component .edit-component .profile-info .textarea {
+  max-width: 100%;
+  width: 500px;
+  height: 200px;
+  resize: none;
+  background: #000;
+  border: 3px solid #0BFF9F;
+  color: #FFF;
+  outline: none;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component .profile-info .textarea {
+    width: 300px;
+  }
+}
+
+.profile-edit-component .edit-component .buttons-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  width: 500px;
+  height: 60px;
+}
+
+@media screen and (max-width: 1009px) {
+  .profile-edit-component .edit-component .buttons-wrapper {
+    width: 0;
+  }
+}
+
+.profile-edit-component .edit-component .buttons-wrapper .buttons-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile-edit-component .edit-component .buttons-wrapper .buttons-center button {
+  width: 130px;
+  height: 50px;
+  background: #000;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  color: #FFF;
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+
+.profile-edit-component .edit-component .buttons-wrapper .buttons-center .save-btn {
+  background: #0BFF9F;
+  color: #000;
+}
+
+.profile-edit-component .edit-component .buttons-wrapper .buttons-center .save-btn.hidden {
+  display: none;
+}
+
+.ImageChanger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 12;
+}
+
+.ImageChanger .image-changer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100%;
+  width: 400px;
+  height: 500px;
+  background: #303030;
+  position: relative;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.ImageChanger .image-changer .new-img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.ImageChanger .image-changer .new-img img {
+  width: 100%;
+}
+
+.ImageChanger .image-changer input {
+  width: 100%;
+  height: 30px;
+  background: #000;
+  border: 3px solid #0BFF9F;
+  color: #FFF;
+  border-radius: 3px;
+  outline: none;
+}
+
+.ImageChanger .image-changer h3 {
+  position: absolute;
+  top: 0;
+  color: #FFF;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ImageChanger .image-changer .insert {
+  bottom: 0;
+  background: #000;
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  color: #FFF;
+  border: none;
+  border-radius: 50px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  cursor: pointer;
+}
+/*# sourceMappingURL=edit-styles.css.map */

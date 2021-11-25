@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 9;
+}
+
+.delete-container .delete-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  height: 200px;
+  background: #383838;
+  border-radius: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+}
+
+.delete-container .delete-box .ask-container {
+  display: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+.delete-container .delete-box .ask-container p {
+  text-align: center;
+}
+
+.delete-container .delete-box .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.delete-container .delete-box .btn-container button {
+  min-width: 120px;
+  border-radius: 50px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-style: italic;
+  background: #000;
+  color: #FFF;
+  font-size: 1.03rem;
+}
+
+.delete-container .delete-box .btn-container button:nth-child(2) {
+  background: #ff5353;
+  color: #000;
+}
+/*# sourceMappingURL=delete-style.css.map */

@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.Profile-Navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+  height: 80px;
+}
+
+.Profile-Navbar .menu-icon {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.Profile-Navbar :root {
+  --bar-bg: #212529;
+}
+
+.Profile-Navbar .menu-icon {
+  position: relative;
+  display: none;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1113px) {
+  .Profile-Navbar .menu-icon {
+    display: block;
+  }
+}
+
+.Profile-Navbar .menu-icon .menu-icon__cheeckbox {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-touch-callout: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.Profile-Navbar .menu-icon div {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  height: 12px;
+}
+
+.Profile-Navbar .menu-icon span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bar-bg, #0BFF9F);
+  border-radius: 1px;
+  -webkit-transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+}
+
+.Profile-Navbar .menu-icon span:first-of-type {
+  top: 0;
+}
+
+.Profile-Navbar .menu-icon span:last-of-type {
+  bottom: 0;
+  right: 0;
+}
+
+.Profile-Navbar .menu-icon.active span:first-of-type,
+.Profile-Navbar .menu-icon .menu-icon__cheeckbox:checked + div span:first-of-type {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 5px;
+}
+
+.Profile-Navbar .menu-icon.active span:last-of-type,
+.Profile-Navbar .menu-icon .menu-icon__cheeckbox:checked + div span:last-of-type {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 5px;
+}
+
+.Profile-Navbar .menu-icon.active:hover span:first-of-type,
+.Profile-Navbar .menu-icon.active:hover span:last-of-type,
+.Profile-Navbar .menu-icon:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+.Profile-Navbar .menu-icon:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+  width: 22px;
+}
+
+@media (min-width: 1113px) {
+  .Profile-Navbar .menu-icon:hover span:first-of-type {
+    width: 26px;
+  }
+  .Profile-Navbar .menu-icon:hover span:last-of-type {
+    width: 12px;
+  }
+}
+
+.Profile-Navbar .home-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 170px;
+  height: 40px;
+  background: #0BFF9F;
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 1113px) {
+  .Profile-Navbar .home-button {
+    display: none;
+  }
+}
+
+.Profile-Navbar .home-button .fa-home {
+  margin-right: 15px;
+}
+
+.Profile-Navbar .Redirect-Home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.Profile-Navbar .Redirect-Home h3 {
+  margin-left: 20px;
+  font-weight: bolder;
+  color: #0BFF9F;
+}
+
+.Profile-Navbar .Redirect-Home .img-container {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Profile-Navbar .Redirect-Home .img-container img {
+  width: 100%;
+}
+
+.Profile-Navbar .Redirect-Profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 40px;
+  background: #383838;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.Profile-Navbar .Redirect-Profile:hover {
+  background: #414141;
+}
+
+@media screen and (max-width: 1113px) {
+  .Profile-Navbar .Redirect-Profile {
+    display: none;
+  }
+}
+
+.Profile-Navbar .Redirect-Profile .img-and-Profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Profile-Navbar .Redirect-Profile .img-and-Profile .profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Profile-Navbar .Redirect-Profile .img-and-Profile .profile-image img {
+  width: 100%;
+}
+
+.Profile-Navbar .Redirect-Profile .img-and-Profile p {
+  margin-left: 20px;
+  color: #FFF;
+}
+
+.Profile-Navbar .Redirect-Profile .triangle {
+  width: 20px;
+  height: 20px;
+  background: #FFF;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 70% 50%);
+          clip-path: polygon(0 0, 0% 100%, 70% 50%);
+  border-radius: 7px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.Profile-Navbar .Redirect-Profile .triangle.active {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/*# sourceMappingURL=nav-style.css.map */

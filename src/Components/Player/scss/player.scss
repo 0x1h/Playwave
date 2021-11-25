@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.song-player{
+    width: 100%;
+    transform: translateY(15px);
+    background: #000;
+}
+
+.song-player{
+    position: fixed;
+    bottom: 0;
+    transform: translateY(-2px);
+    width: 100%;
+    audio{width: inherit}
+}

@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.suggestion-container {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.suggestion-container h1 {
+  color: #fff;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 6rem;
+}
+
+@media screen and (max-width: 1112px) {
+  .suggestion-container h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .suggestion-container h1 {
+    font-size: 4rem;
+  }
+}
+
+.suggestion-container .suggested-content {
+  display: -ms-grid;
+  display: grid;
+  padding-top: 20px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 450px;
+  place-items: center;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 20px 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .suggestion-container .suggested-content {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .suggestion-container .suggested-content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 523px) {
+  .suggestion-container .suggested-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.suggestion-container .suggested-content .suggest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 230px;
+  height: 300px;
+  border-radius: 16px;
+  background: #383838;
+}
+
+.suggestion-container .suggested-content .suggest .img-box {
+  overflow: hidden;
+  width: 160px;
+  position: relative;
+  height: 160px;
+  border-radius: 16px;
+}
+
+.suggestion-container .suggested-content .suggest .suggest-title {
+  width: 100%;
+  min-height: 20px;
+}
+
+.suggestion-container .suggested-content .suggest .suggest-title h4 {
+  color: #fff;
+  text-align: center;
+  font-weight: 100;
+}
+
+.suggestion-container .suggested-content .suggest .options-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 75%;
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .play-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #0BFF9F;
+  width: 50px;
+  height: 50px;
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .play-btn .triangle {
+  width: 20px;
+  height: 20px;
+  background: #000;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 70% 50%);
+          clip-path: polygon(0 0, 0% 100%, 70% 50%);
+  border-radius: 4px;
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .more-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45px;
+  height: 17px;
+  border-radius: 20px;
+  background: #1b1b1b;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #FFF;
+  border-radius: 50%;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.suggestion-container .suggested-content .suggest .options-container .options .more-options .dot::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #FFF;
+  border-radius: 50%;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.suggestion-container .suggested-content .suggest .Options-Box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 140px;
+  height: 50px;
+  background: #383838;
+  -webkit-box-shadow: 0 0 5px;
+          box-shadow: 0 0 5px;
+  border-radius: 10px;
+  -webkit-transform: translate(20px, -20px);
+          transform: translate(20px, -20px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.suggestion-container .suggested-content .suggest .Options-Box p {
+  font-size: .8em;
+}
+
+.suggestion-container .suggested-content .suggest .Options-Box.hidden {
+  display: none;
+}
+
+.suggestion-container .suggested-content .suggest .Options-Box:hover {
+  background: #4b4b4b;
+}
+
+.suggestion-container .suggested-content .suggest .Options-Box .Add-to_Playlist {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0BFF9F;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #151515;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=suggestions-style.css.map */

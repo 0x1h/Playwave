@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap");
+@import "../../Landing/scss/variables.scss";
+
+$bg-color: #1b1b1b;
+$main-color: #0bff9f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  @media screen and (max-width: 1163px){
+    flex-direction: column;
+    @include Center;
+  }
+  .slogan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    h1 {
+      font-weight: 600;
+      color: #fff;
+      font-size: 7rem;
+      font-style: italic;
+      @media screen and (max-width: 1163px){
+        display: none;
+      }
+    }
+  }
+  .form-container {
+    width: 100%;
+    position: relative;
+    padding: 20px 160px;
+    @media screen and (max-width: 1163px){
+      padding: 0;
+    }
+    .form-box {
+      width: 100%;
+      background: #383838;
+      height: 100%;
+      border-radius: 30px;
+      position: inherit;
+      padding-top: 50px;
+      @media (max-width: 476px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .base-inputs {
+        width: 100%;
+        min-height: 230px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media (max-width: 476px){
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        } 
+        .img-circle {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: $bg-color;
+          cursor: pointer;
+          display: inherit;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        .user-inputs {
+          width: 250px;
+          height: 200px;
+          @include Center;
+          flex-direction: column;
+          @media (max-width: 476px){
+            width: 100%;
+          padding: 0 20px;
+
+          } 
+          .inputField {
+            color: #fff;
+            width: 100%;
+            height: 40px;
+            background: $bg-color;
+            border: 3px solid $main-color;
+            margin: 20px 0;
+            border-radius: 6px;
+            outline: none;
+            &.warn{
+              border: 3px solid red;
+            }
+          }
+        }
+      }
+    }
+  }
+  .secondary-inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    @media (max-width: 476px){
+      width: 100%;
+    } 
+    .inputField {
+      width: 100%;
+      height: 40px;
+      @media (max-width: 476px){
+        width: 100%;
+      } 
+      margin-bottom: 20px;
+      background: $bg-color;
+      border: 3px solid $main-color;
+      border-radius: 6px;
+      outline: none;
+      color: #ffffff;
+      &.warn{
+        border: 3px solid red;
+      }
+    }
+    textarea {
+      background: $bg-color;
+      border: 3px solid $main-color;
+      border-radius: 6px;
+      outline: none;
+      color: #fff;
+    }
+  }
+  .button-box {
+    width: 100%;
+    height: 100px;
+    @include Center;
+    button {
+      width: 200px;
+      height: 50px;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: $main-color;
+      font-weight: 600;
+    }
+  }
+}
+.imgSource-box {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 6;
+  @include Center;
+  .src-container {
+    width: 500px;
+    height: 200px;
+    background: #383838;
+    position: relative;
+    z-index: 8;
+    border-radius: 20px;
+    margin: 500px 0;
+    transform: translateY(-50px);
+    box-shadow: 5px 5px 51px #000;
+    .close-btn {
+      width: 100%;
+      height: 20px;
+    }
+    .input-box {
+      @include Center;
+      width: 100%;
+      height: 120px;
+      padding: 0 20px;
+      input {
+        width: 100%;
+        height: 40px;
+        background: $bg-color;
+        border: 3px solid $main-color;
+        border-radius: 6px;
+        outline: none;
+        color: #ffffff;
+      }
+    }
+  }
+}
+.emptyImage{
+  @include Center;
+  flex-direction: column;
+}
+.inputField.warn{
+  border: 3px solid red;
+}

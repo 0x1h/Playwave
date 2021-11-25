@@ -1,0 +1,8 @@
+@mixin Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$bg-color: #1B1B1B;
+$main-color: #0BFF9F
