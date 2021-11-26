@@ -19,14 +19,28 @@ interface SongOptionsProps {
   deleteSong: (id: string) => void;
   id: string;
   playlist_id: string;
+  deleteTrue: boolean;
+  setDelete: () => void
 }
 
 const SongOptions: FC<SongOptionsProps> = ({
   closeComponent,
   deleteSong,
+  deleteTrue,
+  setDelete,
   id,
 }) => {
   const optionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    
+  if(deleteTrue) {
+    setTimeout(() =>{
+      deleteSong(id)
+      setDelete()
+    }, 500)
+  }
+  }, [deleteTrue])
 
   const closeHandler = (e: any): void => {
     if (optionsRef.current && !optionsRef.current.contains(e.target)) {
@@ -41,7 +55,7 @@ const SongOptions: FC<SongOptionsProps> = ({
 
   return (
     <div className="song-options" ref={optionsRef}>
-      <button className="delete-btn" onClick={() => deleteSong(id)}>
+      <button className="delete-btn" onClick={setDelete}>
         Delete
         <FontAwesomeIcon icon={faTrashAlt} style={{ marginLeft: "10px" }} />
       </button>
@@ -60,9 +74,10 @@ const PlaylistSong: FC<PlaylistSongProps> = ({
   playlist_id,
 }) => {
   const [openOptions, setOpenOptions] = useState<boolean>(false);
+  const [slideSong, setSlideSong] = useState<boolean>(false);
 
   return (
-    <div className="Playlist_Song">
+    <div className={!slideSong ? "Playlist_Song" : "Playlist_Song slide"}>
       <div className="song-main-info" onClick={() => playSong({name: song_name, image: img_url, song_url: song_uri})}>
         <div id="index" style={{ color: "#FFF" }}>
           <p>{index}</p>
@@ -81,6 +96,8 @@ const PlaylistSong: FC<PlaylistSongProps> = ({
             <SongOptions
               closeComponent={() => setOpenOptions(false)}
               deleteSong={() => deleteSong(id, playlist_id)}
+              deleteTrue={slideSong}
+              setDelete={() => setSlideSong(true)}
               id={id}
               playlist_id={playlist_id}
             />

@@ -18,7 +18,6 @@
           flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   -webkit-box-shadow: inset 0 0 20px;
           box-shadow: inset 0 0 20px;
   border-radius: 10px;
@@ -286,6 +285,11 @@
   border-radius: 5px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+
+.playlist-main .Playlist_Song.slide {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .playlist-main .Playlist_Song .song-main-info {

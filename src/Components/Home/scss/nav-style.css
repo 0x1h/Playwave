@@ -53,7 +53,7 @@
   height: 100%;
   position: relative;
   cursor: pointer;
-  z-index: 2;
+  z-index: 910;
   -webkit-touch-callout: none;
   position: absolute;
   opacity: 0;

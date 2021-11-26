@@ -13,6 +13,7 @@ import CurrPlaylist from "../Components/Current Playlist/CurrPlaylist"
 import Profile from "../Components/Profile/Profile"
 import Player from "../Components/Player/Player"
 import ProfileEdit from "../Components/Profile/Edit/ProfileEdit"
+import Error from "./Error"
 
 const Playwave = () => {
   const [displayNav, setDisplayNav] = useState<boolean>(false)
@@ -101,7 +102,6 @@ const Playwave = () => {
           <Route path="/About">
             <About />
           </Route>
-        <Route path="/callback">{<Redirect to="/Setup" />}</Route>
         <Route exact path="/Setup">
           <Setup appearComponent={() => setDisplayNav(true)} />
         </Route>
@@ -149,6 +149,9 @@ const Playwave = () => {
             setData={setData}
             newAdded={playlists}
           />
+        </Route>
+        <Route path="*">
+          <Error />
         </Route>
       </Switch>
       {displayNav ? <Player curr_song={selectedSong} /> : null}

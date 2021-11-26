@@ -27,10 +27,6 @@ const SuggestionCont: FC<{
     if(selected.name !== '')setState(selected)
   }, [selected.name])
 
-  const randomSort = (a: string, b: string): number => {
-    return 0.5 - Math.random()
-  }
-
   const getSuggestions = async () => {
     const randomNumber: number = Math.floor(Math.random() * artists.length)
 
@@ -60,7 +56,7 @@ const SuggestionCont: FC<{
     <div className="suggestion-container">
       <h1>Explore</h1>
       <div className="suggested-content">
-        {suggestions !== [] ? (
+        {suggestions.length !== 0 ? (
           suggestions.map((e: any) => {
             return (
               <SuggestedContent

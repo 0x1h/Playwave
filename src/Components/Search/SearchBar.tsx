@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { searchreducer } from "../../Hooks/SearchReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -57,16 +57,13 @@ const SearchBar: React.FC<setComponentProps> = ({
             track_Uri: song.preview,
           };
         });
-        tranferResult!(state.songs);
+        tranferResult!(filterResponse);
         displayResultsFalse();
         setLoaderFalse();
-        dispatch({
-          type: "FOUND_SONGS",
-          payload: { input: state.input, songs: filterResponse },
-        })
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <form
       onSubmit={(e) => {
@@ -86,7 +83,7 @@ const SearchBar: React.FC<setComponentProps> = ({
           onChange={(e) => {
             dispatch({
               type: "ON_CHANGE",
-              payload: { input: e.target.value, songs: state.songs },
+              payload: { input: e.target.value },
             });
           }}
         />

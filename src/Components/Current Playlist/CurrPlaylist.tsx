@@ -4,6 +4,7 @@ import { playlistReducer, State } from "../../Hooks/CurrplaylistHook";
 import { emptyImageSource } from "../Home/Playlists/PlaylistsCont";
 import { UpdatedProps } from "./EditComponent";
 import { TopResultProp } from "../Search/TopResult";
+import PlaylistNavBar from "./PlaylistNavBar"
 import {
   State as PlaylistType,
   defaultState,
@@ -50,9 +51,11 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   changeStateFalse
 }) => {
   const [state, dispatch] = useReducer(playlistReducer, defaultPlaylistState);
+  const [scroll, setScroll] = useState<number>(0)
   const [shortFont, setShortFont] = useState<boolean>(false);
   const { id } = useParams<{ id: string }>();
   const playlistNameRef = useRef<HTMLHeadingElement>(null);
+  // const playlistRef = useRef<HTMLDivElement>(null);
   let history = useHistory();
 
   const triggerChange = () => {
@@ -77,6 +80,17 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
   const cancelAction = () => {
     dispatch({ type: "SHOW_DELETE", payload: false });
   };
+
+  // const scrollWindow = () => {
+  //   let scrollY = playlistRef.current?.scrollTop;
+  //   setScroll(scrollY!);
+  // }
+
+  // useEffect(() => {
+  //   playlistRef.current?.addEventListener("scroll", scrollWindow);
+  //   console.log(scroll)
+  //   return () => playlistRef.current?.removeEventListener("scroll", scrollWindow)
+  // })
 
   useEffect(() => {
     triggerChange();
@@ -121,7 +135,8 @@ const CurrPlaylist: FC<CurrPlaListProps> = ({
           addPlayListLayout={changeState}
           newAdded={newAdded}
         />
-        <div className="playlist-main">
+        <div className="playlist-main" /*ref={playlistRef}*/>
+          {/* <PlaylistNavBar /> */}
           <div className="playlist-info">
             <img src={state.curr_playlist.playlistUri} alt="bg-image" className="blurredBg"/>
             <div
