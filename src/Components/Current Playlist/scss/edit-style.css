@@ -63,6 +63,24 @@
           flex-direction: column;
 }
 
+.playlist-edit-component .edit-box .main-options .image-update .upload-image {
+  overflow: hidden;
+  background: #000;
+  width: 100%;
+  border: none;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 6px;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+}
+
+.playlist-edit-component .edit-box .main-options .image-update .upload-image input {
+  cursor: pointer;
+  position: absolute;
+}
+
 .playlist-edit-component .edit-box .main-options .image-update .image-url-input {
   width: 100%;
 }

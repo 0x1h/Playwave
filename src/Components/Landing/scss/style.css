@@ -156,6 +156,7 @@ nav .nav-stuff .direct-links a:hover {
   font-style: italic;
   font-family: "Poppins", sans-serif;
   font-size: 8rem;
+  z-index: 9;
 }
 
 @media screen and (max-width: 1163px) {

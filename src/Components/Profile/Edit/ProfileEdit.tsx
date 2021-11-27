@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { State } from "../../Setup/Form"
 import { emptyImageSource } from "../../Home/Playlists/PlaylistsCont"
-import ImageChanger from "./ImageChanger"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCamera } from "@fortawesome/free-solid-svg-icons"
 import "./scss/edit-styles.css"
 
 export type InputType = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -10,7 +11,6 @@ export type InputType = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement
 const ProfileEdit = () => {
   let history = useHistory()
   const [checkDifference, setCheckDifference] = useState<boolean>(false)
-  const [showImageChange, setShowImageChange] = useState<boolean>(false)
   const [profileInfo, setProfileInfo] = useState<State>({
     imgSrc: "",
     nickname: "",
@@ -53,22 +53,40 @@ const ProfileEdit = () => {
     setProfileInfo({ ...profileInfo, [name]: value })
   }
 
+  const getBase64 = (file: File, cb: (arg: string | ArrayBuffer | null) => void) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+        cb(reader.result)
+    };
+    reader.onerror = (error) => {
+        console.log('Error: ', error);
+    };
+  }
+
+  const fileUploadHandler = (e: any) => {
+    //uploaded file size
+    const fileSize: number = parseFloat(((e.target.files![0].size / 1024) /1024).toFixed(3))
+    
+    if(fileSize > .150){
+      alert("File size is higher than 150Kb please choose somthing lower")
+    }else getBase64((e.target.files![0]), (result: any): void => {
+      setProfileInfo({...profileInfo, ['imgSrc']: result})
+    });
+  }
+
   return (
     <>
-      {showImageChange ? (
-        <ImageChanger
-          inputHandler={inputHandler}
-          value={profileInfo.imgSrc}
-          changeState={() => setShowImageChange(false)}
-        />
-      ) : null}
       <div className="profile-edit-component">
         <div className="edit-component">
           <div className="profile-picture">
             <div className="profile-img">
+              <div className="overlay-img">
+              <input accept="image/*" type='file' id="imgInp" onChange={fileUploadHandler}/>
+                <FontAwesomeIcon icon={faCamera} size={'7x'} style={{color: "#0BFF9F"}}/>
+              </div>
               <img src={profileInfo.imgSrc.trim() === '' ? emptyImageSource : profileInfo.imgSrc} alt="" />
             </div>
-            <button onClick={() => setShowImageChange(true)}>Change Picture</button>
           </div>
           <div className="profile-info">
             <input

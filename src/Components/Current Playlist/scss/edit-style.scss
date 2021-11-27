@@ -32,6 +32,22 @@
         height: inherit;
         width: inherit;
         flex-direction: column;
+        .upload-image{
+          overflow: hidden;
+          background: #000;
+          width: 100%;
+          border: none;
+          height: 40px;
+          margin-top: 10px;
+          border-radius: 6px;
+          color: #FFF;
+          cursor: pointer;
+          position: relative;
+          input{
+            cursor: pointer;
+            position: absolute;
+          }
+        }
         .image-url-input {
           width: 100%;
           input {

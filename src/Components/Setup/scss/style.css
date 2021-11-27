@@ -8,7 +8,15 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+input[type='file'] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.form-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,7 +29,7 @@
 }
 
 @media screen and (max-width: 1163px) {
-  .container {
+  .form-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -35,10 +43,11 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 0 2rem;
   }
 }
 
-.container .slogan {
+.form-container .slogan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +60,7 @@
   width: 100%;
 }
 
-.container .slogan h1 {
+.form-container .slogan h1 {
   font-weight: 600;
   color: #fff;
   font-size: 7rem;
@@ -59,24 +68,24 @@
 }
 
 @media screen and (max-width: 1163px) {
-  .container .slogan h1 {
+  .form-container .slogan h1 {
     display: none;
   }
 }
 
-.container .form-container {
+.form-container .form-container {
   width: 100%;
   position: relative;
   padding: 20px 160px;
 }
 
 @media screen and (max-width: 1163px) {
-  .container .form-container {
+  .form-container .form-container {
     padding: 0;
   }
 }
 
-.container .form-container .form-box {
+.form-container .form-container .form-box {
   width: 100%;
   background: #383838;
   height: 100%;
@@ -85,8 +94,14 @@
   padding-top: 50px;
 }
 
+@media (max-width: 1163px) {
+  .form-container .form-container .form-box {
+    max-width: 500px;
+  }
+}
+
 @media (max-width: 476px) {
-  .container .form-container .form-box {
+  .form-container .form-container .form-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -103,7 +118,7 @@
   }
 }
 
-.container .form-container .form-box .base-inputs {
+.form-container .form-container .form-box .base-inputs {
   width: 100%;
   min-height: 230px;
   display: -webkit-box;
@@ -114,10 +129,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 9;
 }
 
 @media (max-width: 476px) {
-  .container .form-container .form-box .base-inputs {
+  .form-container .form-container .form-box .base-inputs {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -134,7 +150,7 @@
   }
 }
 
-.container .form-container .form-box .base-inputs .img-circle {
+.form-container .form-container .form-box .base-inputs .img-circle {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -153,7 +169,7 @@
           flex-direction: column;
 }
 
-.container .form-container .form-box .base-inputs .user-inputs {
+.form-container .form-container .form-box .base-inputs .user-inputs {
   width: 250px;
   height: 200px;
   display: -webkit-box;
@@ -172,13 +188,13 @@
 }
 
 @media (max-width: 476px) {
-  .container .form-container .form-box .base-inputs .user-inputs {
+  .form-container .form-container .form-box .base-inputs .user-inputs {
     width: 100%;
     padding: 0 20px;
   }
 }
 
-.container .form-container .form-box .base-inputs .user-inputs .inputField {
+.form-container .form-container .form-box .base-inputs .user-inputs .inputField {
   color: #fff;
   width: 100%;
   height: 40px;
@@ -189,11 +205,11 @@
   outline: none;
 }
 
-.container .form-container .form-box .base-inputs .user-inputs .inputField.warn {
+.form-container .form-container .form-box .base-inputs .user-inputs .inputField.warn {
   border: 3px solid red;
 }
 
-.container .secondary-inputs {
+.form-container .secondary-inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,12 +221,12 @@
 }
 
 @media (max-width: 476px) {
-  .container .secondary-inputs {
+  .form-container .secondary-inputs {
     width: 100%;
   }
 }
 
-.container .secondary-inputs .inputField {
+.form-container .secondary-inputs .inputField {
   width: 100%;
   height: 40px;
   margin-bottom: 20px;
@@ -222,16 +238,16 @@
 }
 
 @media (max-width: 476px) {
-  .container .secondary-inputs .inputField {
+  .form-container .secondary-inputs .inputField {
     width: 100%;
   }
 }
 
-.container .secondary-inputs .inputField.warn {
+.form-container .secondary-inputs .inputField.warn {
   border: 3px solid red;
 }
 
-.container .secondary-inputs textarea {
+.form-container .secondary-inputs textarea {
   background: #1b1b1b;
   border: 3px solid #0bff9f;
   border-radius: 6px;
@@ -239,7 +255,7 @@
   color: #fff;
 }
 
-.container .button-box {
+.form-container .button-box {
   width: 100%;
   height: 100px;
   display: -webkit-box;
@@ -253,7 +269,7 @@
           align-items: center;
 }
 
-.container .button-box button {
+.form-container .button-box button {
   width: 200px;
   height: 50px;
   border-radius: 50px;

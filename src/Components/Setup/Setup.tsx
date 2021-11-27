@@ -6,13 +6,13 @@ import "./scss/style.css"
 
 const Setup: FC<{appearComponent: () => void}> = ({appearComponent}) => {
     return (
-        <div>
-            <Nav />
-            <div className="container">
+        <>  
+        <Nav />
+            <div className="form-container">
                 <Slogan />
                 <Form appearComponent={appearComponent}/>
             </div>
-        </div>
+        </>
     )
 }
 
