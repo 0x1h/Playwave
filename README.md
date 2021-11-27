@@ -2,7 +2,7 @@
     <img src="https://i.ibb.co/tMkN615/forreadme.png" width="600px">
 </div>
 
-Playwave is Open-Source **Music streaming platform**
+Playwave is **Music streaming platform**
 
 Which is mainly written in **[Typescript](https://github.com/microsoft/TypeScript)** and in **[React.js](https://github.com/facebook/react)**
 
