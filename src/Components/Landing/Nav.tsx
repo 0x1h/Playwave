@@ -15,8 +15,7 @@ function Nav() {
                     <div className="Name" style={{color: "#0BFF9F", fontWeight: 600}}>PlayWave</div>
                 </div>
                 <div className="direct-links">
-                    <a href="https://github.com/callmenikk/Playwave" target="_blank">Source</a>
-                    <Link to="/About">About</Link>
+                    <button className="about-btn" onClick={() => history.push("/About")}>About</button>
                 </div>
             </div>
         </nav>
