@@ -1,6 +1,7 @@
 import { FC, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 interface Options {
     showOptions: () => void,
     deletePlaylist: () => void,
@@ -27,11 +28,11 @@ const Options: FC<Options> = ({showOptions, deletePlaylist, editPlaylist}) => {
         <div className="options-box" ref={optionsRef}>
             <div className="edit-btn" onClick={editPlaylist}>  
                 Edit
-                <FontAwesomeIcon icon={faEdit} />
+                <FontAwesomeIcon icon={faEdit as IconProp} />
             </div>
             <div className="delete-btn" onClick={deletePlaylist}>
                 Delete
-                <FontAwesomeIcon icon={faTrashAlt}  color='#ff5353'/>
+                <FontAwesomeIcon icon={faTrashAlt as IconProp}  color='#ff5353'/>
             </div>
         </div>
     )

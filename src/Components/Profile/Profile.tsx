@@ -7,6 +7,7 @@ import { emptyImageSource } from "../Home/Playlists/PlaylistsCont";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import ProfilePlaylists from "./Profile-Playlists";
 import "./scss/style.css";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface EditPlaylistProps {
   close: () => void,
@@ -30,7 +31,7 @@ const EditPlaylistBtn: FC<EditPlaylistProps> = ({close}) => {
   return (
     <div className="edit-btn" ref={editBtnRef}>
       <button className="profile-edit" onClick={() => history.push("/Profile-Edit")}>
-        <FontAwesomeIcon icon={faEdit} style={{marginRight: "10px"}}/>
+        <FontAwesomeIcon icon={faEdit as IconProp} style={{marginRight: "10px"}}/>
         Edit</button>
   </div>
   )

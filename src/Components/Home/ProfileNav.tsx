@@ -7,6 +7,7 @@ import Menu from "./Menu/Menu"
 import Hamburger from "./Hamburger"
 import "./scss/nav-style.css"
 import axios from "axios"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 const ProfileNav: FC<{
   showHome: boolean
@@ -90,7 +91,7 @@ const ProfileNav: FC<{
             </div>
           ) : (
             <div className="home-button" onClick={() => history.push("/Home")}>
-              <FontAwesomeIcon icon={faHome} />
+              <FontAwesomeIcon icon={faHome as IconProp} />
               Home
             </div>
           )}

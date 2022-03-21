@@ -31,9 +31,7 @@ const SuggestionCont: FC<{
     const randomNumber: number = Math.floor(Math.random() * artists.length)
 
     await axios
-      .post(`https://playwave-server.herokuapp.com/musics`, {
-        musicTitle: artists[randomNumber],
-      })
+      .get(`https://playwave.herokuapp.com/${artists[randomNumber]}`)
       .then((resp) => {
         const filterResponse = resp.data.data.map((song: any) => {
           return {

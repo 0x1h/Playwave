@@ -1,6 +1,7 @@
 import { useState, useEffect, FC } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 
 const  DisplayEmptyImage: FC<{uploadImage: (dataURL: string) => void}> = ({uploadImage}) =>{
@@ -33,7 +34,7 @@ const  DisplayEmptyImage: FC<{uploadImage: (dataURL: string) => void}> = ({uploa
   
   return (
     <div className="emptyImage">
-      <FontAwesomeIcon icon={faCamera} size="3x" style={{ color: "#FFF"}} />
+      <FontAwesomeIcon icon={faCamera as IconProp} size="3x" style={{ color: "#FFF"}} />
       <input accept="image/*" type='file' id="imgInp" onChange={fileUploadHandler}/>
       <label htmlFor="files" style={{color: "#FFF"}}>Select file</label>
     </div>

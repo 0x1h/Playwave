@@ -5,6 +5,7 @@ import { emptyImageSource } from "../../Home/Playlists/PlaylistsCont"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCamera } from "@fortawesome/free-solid-svg-icons"
 import "./scss/edit-styles.css"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 export type InputType = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 
@@ -83,7 +84,7 @@ const ProfileEdit = () => {
             <div className="profile-img">
               <div className="overlay-img">
               <input accept="image/*" type='file' id="imgInp" onChange={fileUploadHandler}/>
-                <FontAwesomeIcon icon={faCamera} size={'7x'} style={{color: "#0BFF9F"}}/>
+                <FontAwesomeIcon icon={faCamera as IconProp} size={'7x'} style={{color: "#0BFF9F"}}/>
               </div>
               <img src={profileInfo.imgSrc.trim() === '' ? emptyImageSource : profileInfo.imgSrc} alt="" />
             </div>

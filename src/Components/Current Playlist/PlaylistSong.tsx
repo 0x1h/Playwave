@@ -2,6 +2,7 @@ import { FC, useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { TopResultProp } from "../Search/TopResult";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface PlaylistSongProps {
   index: number;
@@ -57,7 +58,7 @@ const SongOptions: FC<SongOptionsProps> = ({
     <div className="song-options" ref={optionsRef}>
       <button className="delete-btn" onClick={setDelete}>
         Delete
-        <FontAwesomeIcon icon={faTrashAlt} style={{ marginLeft: "10px" }} />
+        <FontAwesomeIcon icon={faTrashAlt as IconProp} style={{ marginLeft: "10px" }} />
       </button>
     </div>
   );

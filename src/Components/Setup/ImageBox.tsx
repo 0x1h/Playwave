@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { State } from "./Form"
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface ImageUpload {
   img: State["imgSrc"];
@@ -16,7 +17,7 @@ const ImageBox: FC<ImageUpload> = ({ img, close, input }) => {
         <div className="close-btn">
           <FontAwesomeIcon
             onClick={close}
-            icon={faTimes}
+            icon={faTimes as IconProp}
             style={{
               color: "#FFF",
               position: "absolute",

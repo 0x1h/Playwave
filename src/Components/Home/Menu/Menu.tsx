@@ -4,6 +4,7 @@ import MenuPlaylist from "./MenuPlaylist"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import "../scss/menu-style.css"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 const Menu: FC<{ open: boolean; close: () => void; addPlaylist: () => void }> = ({
   open,
@@ -37,7 +38,7 @@ const Menu: FC<{ open: boolean; close: () => void; addPlaylist: () => void }> = 
                 close()
               }}
             >
-              <FontAwesomeIcon icon={faSearch} style={{ marginRight: "10px" }} />
+              <FontAwesomeIcon icon={faSearch as IconProp} style={{ marginRight: "10px" }} />
               Search
             </div>
           </>

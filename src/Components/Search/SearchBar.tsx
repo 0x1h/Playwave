@@ -3,6 +3,7 @@ import { searchreducer } from "../../Hooks/SearchReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export type SearchReultsType = {
   input: string;
@@ -45,9 +46,7 @@ const SearchBar: React.FC<setComponentProps> = ({
     displayResultsTrue();
 
     await axios
-      .post(`https://playwave-server.herokuapp.com/musics`, {
-        musicTitle: state.input
-      })
+      .get(`https://playwave.herokuapp.com/${state.input}`)
       .then((resp) => {
         const filterResponse = resp.data.data.map((song: any) => {
           return {
@@ -73,7 +72,7 @@ const SearchBar: React.FC<setComponentProps> = ({
     >
       <div className="SearchBar">
         <FontAwesomeIcon
-          icon={faSearch}
+          icon={faSearch as IconProp}
           size="2x"
           style={{ color: "#FFF", marginLeft: "12px", paddingRight: "10px" }}
         />

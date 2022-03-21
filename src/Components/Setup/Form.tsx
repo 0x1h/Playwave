@@ -12,7 +12,7 @@ export type State = {
 
 const formState: State = {
   imgSrc: "",
-  name: "sad",
+  name: "",
   surname: "",
   nickname: "",
   bio: "",

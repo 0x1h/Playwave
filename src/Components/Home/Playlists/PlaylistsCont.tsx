@@ -5,6 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import {State} from "./createPlayList"
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const emptyImageSource = "https://louisville.edu/history/images/noimage.jpg/image"
 
@@ -32,7 +33,7 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout, newAdded}) => {
       <div className="wrapper">
         <button className="playList-btn" onClick={() => history.push("/Home")}>
           <div className="btn-center">
-            <FontAwesomeIcon icon={faHome} size="2x" />
+            <FontAwesomeIcon icon={faHome as IconProp} size="2x" />
             <p>Home</p>
           </div>
         </button>
@@ -41,7 +42,7 @@ const PlaylistsCont: FC<PlayListsProps> = ({addPlayListLayout, newAdded}) => {
           onClick={() => history.push("/Search")}
         >
           <div className="btn-center">
-            <FontAwesomeIcon icon={faSearch} size="2x" />
+            <FontAwesomeIcon icon={faSearch as IconProp} size="2x" />
             <p>Search</p>
           </div>
         </button>
