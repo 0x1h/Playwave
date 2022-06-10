@@ -123,7 +123,7 @@ const Playwave = () => {
             />
           }
         ></Route>
-        )
+        
         <Route path="/Profile">
           <Profile />
         </Route>

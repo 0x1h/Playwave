@@ -1,10 +1,12 @@
 import ReactJkMusicPlayer from 'react-jinke-music-player'
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { TopResultProp } from "../Search/TopResult";
 import 'react-jinke-music-player/assets/index.css'
 import "./scss/player.css"
 
 const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {  
+    const [windowSize, setWindowSize] = useState<number>(window.innerWidth)
+  
     const audioStuff = [{ 
       name: curr_song.name,
       singer: '',
@@ -16,6 +18,16 @@ const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {
         },
     }]
 
+    const windowResize = () => {
+      setWindowSize(window.innerWidth)
+    }
+
+    useEffect(() => {
+      window.addEventListener("resize", windowResize)
+    
+      return () => window.removeEventListener("resize", windowResize)
+    })
+
   return (
     <div className="song-player">
       <ReactJkMusicPlayer 
@@ -26,6 +38,11 @@ const Player: FC<{ curr_song: TopResultProp}> = ({curr_song}) => {
       defaultPosition={{right: 0,bottom: 0}}
       quietUpdate={true}
       showReload={false}
+      drag={false}
+      defaultVolume={0.5}
+      spaceBar={true}
+      preload={true}
+      mode={windowSize >= 768 ? 'full' : "mini"}
       />
     </div>
   );

@@ -46,6 +46,19 @@ const SuggestedContent: FC<SuggProps> = ({ name, imgSrc, setFalse, songUri, setP
 
   return (
     <div className="suggest">
+      <div className="glass" />
+      <div className="trigger"
+       onClick={() => setParentState({name: name,   image: imgSrc,
+        song_url: songUri,})}
+      style={{
+        width: "100%",
+        position: "absolute",
+        height: "calc(100% - 50px)",
+        top: "0",
+        left: "0",
+        zIndex: 20,
+        cursor: "pointer"
+      }}/>
       <div className="img-box">
         <img
           src={imgSrc}
@@ -53,15 +66,12 @@ const SuggestedContent: FC<SuggProps> = ({ name, imgSrc, setFalse, songUri, setP
           style={{ width: "100%" }}
         />
       </div>
+      <div className="wrapper-options">
       <div className="suggest-title">
         <h4>{name}</h4>
       </div>
       <div className="options-container">
         <div className="options">
-          <div className="play-btn" onClick={() => setParentState({name: name,   image: imgSrc,
-                song_url: songUri,})}>
-            <span className="triangle"></span>
-          </div>
           <div
             className="more-options"
             onClick={() => {
@@ -75,6 +85,7 @@ const SuggestedContent: FC<SuggProps> = ({ name, imgSrc, setFalse, songUri, setP
             <Options toggle={hide} setFalse={setFalse} />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

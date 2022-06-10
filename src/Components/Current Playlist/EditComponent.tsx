@@ -55,7 +55,12 @@ const EditComponent: FC<EditProps> = ({prevData, closeEdit, updateState, id}) =>
 
     return (
         <div className="playlist-edit-component">
-            <div className="edit-box">
+            <form className="edit-box" onSubmit={(e) => {
+                e.preventDefault()
+                
+                if(update.newTitle.trim() === '') alert("you can't keep name blank")
+                else updateState(update, id)
+            }}>
                 <div className="main-options">
                     <div className="image-update">
                         {update.newTitle.trim() === '' ? <Warn /> : null}
@@ -72,13 +77,10 @@ const EditComponent: FC<EditProps> = ({prevData, closeEdit, updateState, id}) =>
                     </div>
                 </div>
             <div className="btn-container">
-                <button className="cancel" onClick={closeEdit}>Cancel</button>
-                <button className="save" onClick={() => {
-                    if(update.newTitle.trim() === '') alert("you can't keep name blank")
-                    else updateState(update, id)
-                }}>Save</button>
+                <button className="cancel" onClick={closeEdit} type="button">Cancel</button>
+                <button className="save" type="submit">Save</button>
             </div>
-            </div>
+            </form>
         </div>
     )
 }
