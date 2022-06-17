@@ -96,11 +96,11 @@ const CreatePlayList: FC<{ close: () => void, setData: (data: State[]) => void }
             placeholder="Playlist name"
             maxLength={12}
           />
-        </form>
         <div className="save-container">
-          <button onClick={close}>Cancel</button>
-          <button onClick={() => addPlayList()}>Create</button>
+          <button onClick={close} type="button">Cancel</button>
+          <button onClick={() => addPlayList()} type="submit">Create</button>
         </div>
+        </form>
       </div>
     </div>
   );
