@@ -9,7 +9,7 @@ Which is mainly written in **[Typescript](https://github.com/microsoft/TypeScrip
 and **HUGE HUGE HUGE Thank you for [Deezer API](https://www.deezer.com/us/) for giving me all this musics data, even 30 seconds long audio**
 
 ### What can you do on there?
-
+ 
 - look for musics
 - create playlists
 - modify profile
